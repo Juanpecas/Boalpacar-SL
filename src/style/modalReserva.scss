@@ -1,0 +1,136 @@
+.modal-overlay {
+  position: fixed; /* Fija la posición para cubrir toda la pantalla */
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.7); /* Fondo semitransparente */
+  display: flex; /* Flex para centrar el contenido */
+  align-items: center;
+  justify-content: center;
+  z-index: 1000; /* Asegúrate de que esté encima de otros elementos */
+
+  .modals {
+    background: white; /* Color de fondo del modal */
+    padding: 20px; /* Espaciado interno */
+    border-radius: 8px; /* Bordes redondeados */
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3); /* Sombra */
+    width: 80%; /* Ancho del modal */
+    max-width: 500px; /* Ancho máximo */
+
+    h4 {
+      text-align: center;
+      font-family: "Roboto", sans-serif; // Tipografía atractiva
+      font-size: 1.5rem;
+      margin-bottom: 20px;
+      color: #333;
+    }
+
+    .close-button {
+      position: absolute;
+      top: 10px;
+      right: 10px;
+      font-size: 1.5rem;
+      background: none;
+      border: none;
+      cursor: pointer;
+      color: #555;
+      transition: color 0.3s ease-in-out;
+
+      &:hover {
+        color: #ff4757;
+      }
+    }
+  }
+}
+
+input[type="text"],
+input[type="email"],
+input[type="tel"],
+input[type="date"],
+select {
+  width: 100%;
+  color: white;
+  padding: 12px;
+  border: 1px solid #ddd; // Borde del input
+  border-radius: 10px; // Esquinas más redondeadas
+  font-size: 1rem;
+  transition: border 0.3s ease, box-shadow 0.3s ease;
+  margin-bottom: 15px;
+  background-color: #b6acac; // Fondo claro
+  box-shadow: inset 0 2px 5px rgba(0, 0, 0, 0.05); // Sombra interna suave
+
+  &:focus {
+    border-color: #007bff; // Color azul en foco
+    outline: none;
+    box-shadow: 0 0 5px rgba(0, 123, 255, 0.5); // Resaltar el borde al enfocarse
+  }
+}
+
+.error {
+  color: #e74c3c; // Rojo más atractivo
+  font-size: 0.875rem;
+  margin-top: -10px; // Reduce espacio entre el mensaje de error y el input
+  margin-bottom: 15px;
+}
+
+.button-modal {
+  display: flex;
+  justify-content: space-between; // Espacio entre los botones
+  margin-top: 20px;
+}
+
+.button-submit {
+  background: linear-gradient(135deg, #38ef7d, #11998e); // Degradado verde
+  color: white;
+  padding: 12px 24px;
+  border: none;
+  font-size: 1rem;
+  cursor: pointer;
+  border-radius: 50px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1); // Sombra externa
+  transition: background 0.3s ease, transform 0.3s ease;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  &:hover {
+    background: linear-gradient(
+      135deg,
+      #11998e,
+      #38ef7d
+    ); // Inversión del degradado en hover
+    transform: translateY(-2px); // Efecto de elevación al hacer hover
+  }
+}
+
+.button-cancel {
+  background: linear-gradient(135deg, #ff6a6a, #ff4757); // Degradado rojo
+  color: white;
+  padding: 12px 24px;
+  border: none;
+  font-size: 1rem;
+  cursor: pointer;
+  border-radius: 50px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1); // Sombra
+  transition: background 0.3s ease, transform 0.3s ease;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  &:hover {
+    background: linear-gradient(
+      135deg,
+      #ff4757,
+      #ff6a6a
+    ); // Inversión del degradado
+    transform: translateY(-2px); // Efecto de elevación al hacer hover
+  }
+}
+
+.additional-info {
+  margin-top: 10px;
+  font-size: 14px; /* Puedes ajustar el tamaño de la fuente */
+  color: #555; /* Color más suave para un mensaje informativo */
+  font-weight: 500; /* Peso de fuente para hacerlo más legible */
+}

@@ -1,0 +1,58 @@
+/* Estilos para el contenedor de los botones */
+.filter-links {
+  display: flex;
+  justify-content: space-between;
+  padding: 30px; /* Espaciado alrededor de los botones */
+}
+
+/* Estilos para los botones */
+.btn {
+  height: 40px; /* Altura uniforme para los botones */
+  margin-right: 20px; /* Espaciado entre botones */
+  text-transform: capitalize; /* Primera letra de cada palabra en mayúsculas */
+  font-size: 0.9rem; /* Tamaño de fuente */
+  text-align: center; /* Alineación del texto */
+  display: flex; /* Usamos flex para centrar el texto */
+  align-items: center; /* Centra el texto verticalmente */
+  cursor: pointer; /* Cambia el cursor al pasar el mouse */
+  color: #333; /* Color del texto gris oscuro */
+  text-decoration: none; /* Sin subrayado */
+  padding: 10px 20px; /* Espaciado interno */
+  position: relative; /* Posicionamiento relativo para el efecto */
+  transition: color 0.3s ease; /* Transición suave para el color */
+}
+
+/* Efecto al pasar el mouse por encima del botón */
+.btn:hover {
+  color: black; /* Color del texto al pasar el mouse */
+}
+
+/* Efecto de subrayado */
+.btn::after {
+  content: ""; /* Crear un contenido vacío */
+  position: absolute; /* Posición absoluta */
+  width: 0; /* Ancho inicial 0 */
+  height: 2px; /* Altura de la línea */
+  display: block;
+  margin: auto;
+  background: black; /* Color de la línea */
+  transition: width 0.4s ease; /* Transición suave */
+  bottom: -5px; /* Posiciona la línea debajo del texto */
+  left: 0; /* Alineado a la izquierda */
+  right: 0; /* Alineado a la derecha */
+}
+
+/* Efecto al pasar el mouse sobre el botón */
+.btn:hover::after {
+  width: 100%; /* Escala a 100% */
+}
+
+/* Estilo para el botón seleccionado */
+.btn.selected {
+  color: black; /* Color del texto al seleccionar */
+}
+
+.btn.selected::after {
+  width: 100%; /* Ancho completo al seleccionar */
+  background: black; /* Color de la línea al seleccionar */
+}

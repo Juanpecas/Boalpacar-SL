@@ -1,0 +1,168 @@
+.wrapper-middle {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  margin-top: 50px;
+  margin-bottom: 50px;
+}
+
+.wrapper-center {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.wrapper-text {
+  text-align: center;
+
+  h5 {
+    font-size: 1.6rem; /* Tamaño de fuente más pequeño */
+    color: #2c3e50; /* Color oscuro */
+    margin-bottom: 10px;
+    text-shadow: 1px 1px 5px rgba(0, 0, 0, 0.2); /* Sombra sutil en el texto */
+  }
+
+  h6 {
+    font-size: 1.2rem; /* Tamaño de fuente más pequeño */
+    color: #34495e; /* Color gris oscuro */
+    text-shadow: 1px 1px 5px rgba(0, 0, 0, 0.2); /* Sombra sutil en el texto */
+  }
+}
+
+.wrapper-inf {
+  display: flex;
+  justify-content: space-around; /* Asegura que los elementos tengan espacio uniforme */
+  align-items: flex-start; /* Alinea los elementos en la parte superior */
+  width: 100%; /* Asegura que ocupe todo el ancho */
+}
+
+.cars-inf,
+.name-inf,
+.price-inf,
+.icon-inf {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 40px;
+}
+
+.cars-inf div,
+.name-inf div,
+.price-inf div {
+  margin: 10px 0; /* Espaciado entre elementos */
+  font-size: 1.2rem; /* Tamaño de fuente general */
+  color: #000000; /* Color oscuro */
+  text-align: center; /* Centra el texto */
+}
+
+/* Estilos para los iconos de coches */
+.cars-inf .coche,
+.cars-inf .furgoneta,
+.cars-inf .camion,
+.cars-inf .tractocamion {
+  font-size: 30px; /* Tamaño de iconos reducido */
+  color: #010a14; /* Color azul suave para los iconos */
+  margin-bottom: 8px; /* Espaciado entre el icono y el texto */
+}
+
+/* Estilos para nombres de coches */
+.name-inf div {
+  font-weight: 600; /* Negrita */
+  text-shadow: 1px 1px 5px rgba(0, 0, 0, 0.1); /* Sombra sutil en el texto */
+  margin-top: 22px;
+}
+
+/* Estilos para precios */
+.price-inf div {
+  font-weight: bold; /* Negrita para los precios */
+  font-size: 1.1rem; /* Tamaño de fuente para precios */
+  color: #001107; /* Color verde para precios */
+  text-shadow: 1px 1px 5px rgba(0, 0, 0, 0.1); /* Sombra sutil en el texto */
+  margin-top: 25px;
+}
+
+#map-container {
+  height: 200px; /* Altura del contenedor del mapa */
+  width: 100%; /* Ancho del contenedor del mapa */
+}
+
+.directions-link {
+  margin-top: 20px; /* Espacio superior para separar del contenido anterior */
+  text-align: center; /* Centrar el enlace */
+}
+
+.directions-link a {
+  display: inline-block; /* Hacer que el enlace se comporte como un bloque en línea */
+  background: linear-gradient(135deg, #061ab3, #a2b3ff);
+  color: white; /* Color del texto */
+  padding: 10px 20px; /* Espaciado interno */
+  border-radius: 25px; /* Bordes redondeados */
+  text-decoration: none; /* Sin subrayado */
+  font-weight: bold; /* Texto en negrita */
+  transition: transform 0.3s, box-shadow 0.3s;
+
+  &:hover {
+    transform: translateY(-4px); // Elevar el contenedor
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3); // Sombra más profunda
+  }
+
+  span {
+    margin-right: 8px;
+    cursor: pointer;
+    font-weight: 600; // Negrita
+    color: #fff; // Color blanco
+    font-size: 16px;
+    transition: color 0.3s; // Transición suave para el color
+
+    // Se eliminó el efecto de color al pasar el mouse.
+  }
+}
+
+/* Middle-two */
+.wrapper-middle-two {
+  background: radial-gradient(ellipse, #414283, #ffffff);
+  padding: 35px 40px;
+  flex-direction: column;
+  height: 900px;
+}
+
+.button-openmodal {
+  background-color: rgb(8, 211, 8);
+  color: black;
+  padding: 10px 20px;
+  border: none;
+  font-size: 16px;
+  box-sizing: border-box;
+  transition-duration: 0.4s;
+  cursor: pointer;
+  border-radius: 50px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.button-openmodal:hover {
+  background-color: darkblue;
+  color: white;
+}
+
+.button-openmodal1 {
+  background-color: rgb(8, 211, 8);
+  color: black;
+  padding: 15px 20px;
+  border: none;
+  font-size: 16px;
+  box-sizing: border-box;
+  transition-duration: 0.4s;
+  cursor: pointer;
+  border-radius: 50px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.button-openmodal1:hover {
+  background-color: darkblue;
+  color: white;
+}

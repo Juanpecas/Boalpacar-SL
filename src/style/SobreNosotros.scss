@@ -1,0 +1,73 @@
+/* Estilo general del contenedor */
+.sobre-nosotros {
+  max-width: 800px; /* Ancho máximo del contenedor */
+  margin: 2rem auto; /* Centrar el contenedor */
+  padding: 2rem; /* Espaciado interno */
+  background-color: #ffffff; /* Fondo blanco */
+  border-radius: 8px; /* Bordes redondeados */
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1); /* Sombra suave */
+}
+
+/* Estilos para los encabezados */
+h1 {
+  font-size: 2.5rem; /* Tamaño de fuente grande */
+  color: #007bff; /* Color azul */
+  margin-bottom: 1rem; /* Margen inferior */
+  text-align: center; /* Centrar el texto */
+}
+
+h2 {
+  font-size: 1.8rem; /* Tamaño de fuente para subtítulos */
+  color: #333; /* Color del texto */
+  margin-top: 2rem; /* Margen superior */
+  margin-bottom: 1rem; /* Margen inferior */
+}
+
+/* Estilo para los párrafos */
+p {
+  font-size: 1.1rem; /* Tamaño de fuente */
+  color: #555; /* Color de texto */
+  line-height: 1.6; /* Altura de línea para mejorar la legibilidad */
+  margin-bottom: 1rem; /* Margen inferior */
+}
+
+/* Estilo para los miembros del equipo */
+.team {
+  display: flex; /* Usar flexbox para el diseño de equipo */
+  justify-content: space-around; /* Espacio entre los miembros */
+  flex-wrap: wrap; /* Permitir que los elementos se envuelvan en líneas */
+  margin-top: 1.5rem; /* Margen superior */
+}
+
+/* Estilo para cada miembro del equipo */
+.team-member {
+  background-color: #f8f9fa; /* Fondo gris claro */
+  border-radius: 8px; /* Bordes redondeados */
+  padding: 1rem; /* Espaciado interno */
+  width: 45%; /* Ancho de cada tarjeta de miembro */
+  margin: 0.5rem; /* Margen para separación */
+  text-align: center; /* Centrar texto */
+  box-shadow: 0 1px 5px rgba(0, 0, 0, 0.1); /* Sombra sutil */
+}
+
+/* Estilo para los encabezados de los miembros del equipo */
+.team-member h3 {
+  font-size: 1.5rem; /* Tamaño de fuente para el nombre */
+  color: #007bff; /* Color azul */
+  margin-bottom: 0.5rem; /* Margen inferior */
+}
+
+/* Estilo para las citas (testimonios) */
+blockquote {
+  border-left: 4px solid #007bff; /* Borde a la izquierda */
+  padding-left: 1rem; /* Espaciado a la izquierda */
+  font-style: italic; /* Estilo en cursiva */
+  color: #555; /* Color del texto */
+  margin: 1.5rem 0; /* Margen vertical */
+}
+
+/* Estilo para las citas (autor) */
+cite {
+  font-weight: bold; /* Negrita para el autor */
+  color: #333; /* Color del texto */
+}

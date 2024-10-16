@@ -1,0 +1,81 @@
+/* Estilos para Footer */
+.wrapper-footer {
+  color: #fff; /* Texto blanco */
+  padding: 40px 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  border-top: 4px solid #7f8bd1; /* Línea superior en amarillo */
+}
+
+.banner-logo-footer img {
+  max-width: 150px; /* Ajuste del tamaño del logo */
+  height: auto;
+  margin-right: 20px;
+}
+
+.aviso-legal h4 {
+  margin: 0;
+  font-size: 14px;
+  color: #ccc; /* Texto en gris claro */
+}
+
+.aviso-legal h4 a {
+  text-decoration: none;
+  color: #080808; /* Amarillo para el enlace */
+  transition: color 0.3s ease;
+}
+
+.aviso-legal h4 a:hover {
+  color: #fff; /* Efecto hover en blanco */
+}
+
+.follow {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 10px;
+  color: #080808;
+}
+
+.follow div {
+  margin-bottom: 8px;
+}
+
+.social-media {
+  display: flex;
+  gap: 10px; /* Espacio entre iconos */
+}
+
+.social-media a {
+  color: #0203181e; /* Color amarillo para los iconos */
+  font-size: 20px;
+  transition: color 0.3s ease;
+  margin-top: 10ox;
+}
+
+.social-media a:hover {
+  color: #fff; /* Hover cambia a blanco */
+}
+
+.contact-info a {
+  color: #24221c;
+  font-size: 16px;
+}
+
+.contact-info a:hover {
+  color: #fff;
+}
+
+/* Ajustes responsivos */
+@media (max-width: 768px) {
+  .wrapper-footer {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+  .social-media {
+    justify-content: center;
+  }
+}

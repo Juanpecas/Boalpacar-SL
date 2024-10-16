@@ -1,0 +1,125 @@
+.portfolio-items-wrapper {
+  display: grid;
+  grid-template-columns: repeat(
+    3,
+    0.8fr
+  ); /* Ajusta para hacer las columnas más pequeñas */
+  gap: 15px; /* Espaciado entre elementos */
+  margin: 20px; /* Margen exterior */
+}
+
+.portfolio-item-wrapper {
+  position: relative;
+  overflow: hidden; /* Para evitar que los elementos sobresalgan */
+  border-radius: 8px; /* Bordes redondeados */
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Sombra suave */
+  transition: transform 0.3s; /* Transición para el hover */
+  cursor: pointer; /* Cursor cambia al pasar por encima */
+
+  &:hover {
+    transform: scale(1.02); /* Efecto de escalado al pasar el mouse */
+  }
+}
+
+.portfolio-img-background {
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  height: 0;
+  padding-bottom: 70%; /* Mantiene las imágenes cuadradas */
+  width: 100%; /* Mantén el ancho al 100% del contenedor */
+  transition: filter 0.3s;
+}
+
+.image-blur {
+  filter: brightness(70%); /* Oscurece la imagen al pasar el mouse */
+}
+
+.img-text-wrapper {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around; /* El título va arriba, el subtítulo abajo */
+  align-items: center;
+  padding: 10px; /* Ligero padding */
+  text-align: center;
+}
+
+.title {
+  color: rgb(248, 248, 248); /* Color del título */
+  font-size: 0.9rem; /* Tamaño más pequeño */
+  font-weight: 700; /* Peso del título */
+  background-color: rgba(0, 0, 0, 0.6); /* Fondo semi-transparente */
+  padding: 5px 10px; /* Añadir relleno alrededor del título */
+  border-radius: 5px; /* Bordes redondeados para el título */
+  width: 100%; /* Ocupa todo el ancho */
+}
+
+.subtitle {
+  color: white; /* Color del subtítulo */
+  font-size: 0.8rem; /* Tamaño más pequeño y legible */
+  font-weight: 600; /* Peso regular */
+  background-color: rgba(0, 0, 0, 0.6); /* Fondo semi-transparente */
+  padding: 10px; /* Espaciado interno alrededor del texto */
+  border-radius: 5px; /* Bordes redondeados */
+  width: 100%; /* Ocupa todo el ancho disponible */
+  text-align: left; /* Alineación del texto a la izquierda */
+  line-height: 1.4; /* Mejor espacio entre líneas para legibilidad */
+  margin-top: 10px; /* Separación entre el subtítulo y otros elementos */
+}
+
+/* Estilos para el botón de reserva */
+.reserve-button-wrapper {
+  position: absolute;
+  bottom: 5px; /* Ajusta la posición en la parte inferior */
+  right: 5px; /* Alineación a la derecha */
+  text-align: right; /* Alineación a la derecha */
+}
+
+.reserve-button {
+  padding: 6px 12px; /* Ajusta el tamaño del botón */
+  border: none; /* Sin bordes */
+  border-radius: 5px; /* Bordes redondeados */
+  background-color: #4caf50; /* Color del botón */
+  color: white; /* Color del texto */
+  cursor: pointer; /* Cambia el cursor al pasar el mouse */
+  transition: background-color 0.3s; /* Transición suave para el hover */
+}
+
+.reserve-button:hover {
+  background-color: #388e3c; /* Color más oscuro al hacer hover */
+}
+
+/* Estilos adicionales para el modal */
+.modal-content {
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+}
+
+.logo-wrapper {
+  width: 70px; /* Ancho máximo del contenedor del logo */
+  height: 70px; /* Altura máxima del contenedor del logo */
+  display: flex; /* Usar flexbox para centrar la imagen */
+  justify-content: center; /* Centra horizontalmente */
+  align-items: center; /* Centra verticalmente */
+  overflow: hidden; /* Oculta cualquier parte de la imagen que sobresalga */
+  border-radius: 50%; /* Bordes redondeados para un efecto circular */
+  background-color: rgba(
+    255,
+    255,
+    255,
+    0.8
+  ); /* Fondo semi-transparente para un contraste suave */
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); /* Sombra suave para profundidad */
+}
+
+.logo-wrapper img {
+  max-width: 100%; /* Limita el ancho máximo de la imagen */
+  max-height: 100%; /* Limita la altura máxima de la imagen */
+  object-fit: contain; /* Mantiene la relación de aspecto sin recortar */
+}

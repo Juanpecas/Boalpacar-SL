@@ -1,0 +1,44 @@
+/* src/components/CookieConsentBanner.css */
+.cookie-banner {
+  position: fixed;
+  bottom: 20px; /* Espaciado desde el fondo */
+  left: 20px; /* Espaciado desde la izquierda */
+  background: #343a40; /* Color de fondo oscuro */
+  color: #ffffff; /* Color de texto blanco */
+  padding: 20px; /* Espaciado interno */
+  border-radius: 8px; /* Bordes redondeados */
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); /* Sombra sutil */
+  z-index: 1000; /* Asegúrate de que el banner esté por encima de otros elementos */
+  font-family: "Arial", sans-serif; /* Fuente más legible */
+  transition: transform 0.3s ease-in-out; /* Transición para el movimiento */
+  transform: translateY(100%); /* Comienza fuera de la vista */
+}
+
+.cookie-banner.show {
+  transform: translateY(0); /* Muestra el banner */
+}
+
+.cookie-banner p {
+  margin: 0; /* Elimina margen */
+  font-size: 14px; /* Tamaño de fuente adecuado */
+}
+
+.cookie-banner button {
+  margin: 0 5px;
+  padding: 10px 15px; /* Espaciado del botón */
+  background: #007bff; /* Color azul para el botón */
+  color: #fff; /* Color del texto del botón */
+  border: none; /* Sin borde */
+  border-radius: 5px; /* Bordes redondeados para el botón */
+  cursor: pointer; /* Cambia el cursor al pasar el mouse */
+  transition: background-color 0.3s, transform 0.3s; /* Transición suave */
+}
+
+.cookie-banner button:hover {
+  background: #0056b3; /* Color más oscuro al pasar el mouse */
+  transform: translateY(-2px); /* Efecto de elevación al pasar el mouse */
+}
+
+.error-text {
+  color: #dc3545; /* Color rojo para errores */
+}
