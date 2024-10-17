@@ -1,20 +1,23 @@
+require('dotenv').config();
 const express = require("express");
-const stripe = require("stripe")(
-  "sk_test_51QAGC6EJxV1jBn9lELUJla6AcjRHWGiYnH9WOVlfxAdLmt8ae2AcSiunjo6SjsZasWntjO5x688vU1lNeBPhNgH500MtrQMycR"
-);
+const stripe = require("stripe")(process.env.STRIPE_SECRET_KEY);
 const cors = require("cors");
 const mysql = require("mysql");
+const helmet = require("helmet");
 
 const app = express();
+
+// Middleware
 app.use(cors());
 app.use(express.json());
+app.use(helmet()); // Seguridad adicional
 
 // Configuración de MySQL
 const db = mysql.createConnection({
-  host: "localhost", // Cambia esto si usas un servicio de base de datos remoto
-  user: "juan", // Usuario de MySQL
-  password: "Qwaszx15***", // Contraseña de MySQL
-  database: "reservas", // Nombre de tu base de datos
+  host: process.env.DB_HOST,
+  user: process.env.DB_USER,
+  password: process.env.DB_PASSWORD,
+  database: process.env.DB_NAME,
 });
 
 // Conectar a MySQL
@@ -26,39 +29,41 @@ db.connect((err) => {
   console.log("Conectado a la base de datos MySQL");
 });
 
-// Mapeo de tipos de lavado a precios
+// Mapeo de tipos de lavado a precios (en centavos)
 const preciosLavado = {
-  limpiezaInteriorCoche: 2000, // $20.00
-  exteriorCoche: 1500, // $15.00
-  limpiezaInteriorYExteriorCoche: 3000, // $30.00
-  limpiezaFurgonetaInterior: 2000, // $20.00
-  limpiezaFurgonetaExterior: 2000, // $20.00
-  limpiezaFurgonetaCompleto: 3500, // $35.00
-  limpiezaCamionInterior: 2000, // $20.00
-  limpiezaCamionExterior: 5000, // $50.00
-  limpiezaCamionCompleto: 6000, // $60.00
-  petroleMotor: 6000, // $60.00
-  tapiceriaCocheFurgoneta: 15000, // $150.00
-  tapiceriaCamion: 18000, // $180.00
+  limpiezaInteriorCoche: 2000,
+  exteriorCoche: 1500,
+  limpiezaInteriorYExteriorCoche: 3000,
+  limpiezaFurgonetaInterior: 2000,
+  limpiezaFurgonetaExterior: 2000,
+  limpiezaFurgonetaCompleto: 3500,
+  limpiezaCamionInterior: 2000,
+  limpiezaCamionExterior: 5000,
+  limpiezaCamionCompleto: 6000,
+  petroleMotor: 6000,
+  tapiceriaCocheFurgoneta: 15000,
+  tapiceriaCamion: 18000,
 };
 
 // Endpoint para crear el Payment Intent
 app.post("/create-payment-intent", async (req, res) => {
-  const { tipoLavado } = req.body; // Obtener el tipo de lavado del cuerpo de la solicitud
-  const amount = preciosLavado[tipoLavado]; // Obtener el monto correspondiente
+  const { tipoLavado } = req.body;
+  const amount = preciosLavado[tipoLavado];
 
   // Verificar si el tipo de lavado es válido
   if (!amount) {
-    return res.status(400).send({ error: "Tipo de lavado no válido." });
+    return res.status(400).json({ error: "Tipo de lavado no válido." });
   }
 
   try {
     const paymentIntent = await stripe.paymentIntents.create({
       amount,
-      currency: "usd",
+      currency: "eur", // Moneda en euros
     });
-    res.send({ clientSecret: paymentIntent.client_secret });
+
+    res.status(200).send({ clientSecret: paymentIntent.client_secret });
   } catch (error) {
+    console.error("Error al crear el Payment Intent:", error);
     res.status(500).send({ error: error.message });
   }
 });
@@ -77,7 +82,7 @@ app.post("/api/reservas", async (req, res) => {
     paymentIntentId,
   } = req.body;
 
-  // Validar que todos los campos requeridos están presentes
+  // Validar campos obligatorios
   if (
     !nombre ||
     !modelo ||
@@ -89,24 +94,24 @@ app.post("/api/reservas", async (req, res) => {
   ) {
     return res
       .status(400)
-      .json({ message: "Todos los campos son obligatorios" });
+      .json({ message: "Todos los campos son obligatorios." });
   }
 
-  // Confirmar que el pago fue exitoso antes de guardar la reserva
   try {
+    // Confirmar que el pago fue exitoso
     const paymentIntent = await stripe.paymentIntents.retrieve(paymentIntentId);
 
     if (paymentIntent.status !== "succeeded") {
-      return res.status(400).json({ message: "El pago no fue exitoso" });
+      return res.status(400).json({ message: "El pago no fue exitoso." });
     }
 
-    // Crear la consulta SQL para insertar los datos
+    // Crear la consulta SQL para insertar la reserva
     const query = `
       INSERT INTO reservas (nombre, modelo, email, telefono, fecha, hora, tipoLavado, precio) 
       VALUES (?, ?, ?, ?, ?, ?, ?, ?)
     `;
 
-    // Ejecutar la consulta
+    // Ejecutar la consulta de MySQL
     db.query(
       query,
       [nombre, modelo, email, telefono, fecha, hora, tipoLavado, precio],
@@ -115,18 +120,18 @@ app.post("/api/reservas", async (req, res) => {
           console.error("Error al guardar la reserva:", err);
           return res
             .status(500)
-            .json({ message: "Error al guardar la reserva" });
+            .json({ message: "Error al guardar la reserva." });
         }
 
         res.status(200).json({
-          message: "Reserva guardada con éxito",
+          message: "Reserva guardada con éxito.",
           reservaId: result.insertId,
         });
       }
     );
   } catch (error) {
     console.error("Error al verificar el pago:", error);
-    return res.status(500).json({ message: "Error al verificar el pago" });
+    return res.status(500).json({ message: "Error al verificar el pago." });
   }
 });
 

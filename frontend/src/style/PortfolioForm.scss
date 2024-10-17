@@ -1,0 +1,149 @@
+/* Estilos del formulario principal */
+.portfolio-form-wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 20px; /* Espacio entre los elementos */
+  background-color: #f7f8fa;
+  padding: 30px;
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+/* Estilos de los inputs en dos columnas */
+.two-column {
+  
+  gap: 20px; /* Espacio entre columnas */
+  
+
+  @media (min-width: 768px) {
+    flex-direction: row;
+  }
+
+  input,
+  select {
+    flex: 1; /* Hacer que los inputs ocupen todo el espacio disponible */
+  }
+}
+
+/* Input de una sola columna */
+.one-column {
+  display: flex;
+  flex-direction: column;
+}
+
+input,
+textarea,
+select {
+  padding: 10px;
+  font-size: 1rem;
+  border-radius: 14px;
+  border: 1px solid #ddd;
+  outline: none;
+  transition: border 0.2s ease;
+  width: 100%; /* Ajustar ancho completo */
+}
+
+input:focus,
+textarea:focus,
+select:focus {
+  border-color: #2d98da; /* Color del borde al hacer focus */
+}
+
+textarea {
+  resize: none;
+  height: 100px;
+}
+
+.select-element {
+  appearance: none;
+  background-color: #b6acac;
+  border-radius: 14px;
+  padding: 10px;
+  font-size: 1rem;
+  border: 1px solid #ddd;
+}
+
+/* Estilos para Dropzone y las imágenes */
+.image-uploaders {
+  display: flex;
+  gap: 20px;
+  flex-direction: column;
+
+  @media (min-width: 768px) {
+    flex-direction: row;
+  }
+
+  .dropzone {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    background-color: #fafafa;
+    border: 2px dashed #ddd;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    text-align: center;
+
+    &:hover {
+      background-color: #f0f0f0; /* Cambia el fondo al pasar el cursor */
+    }
+
+    p {
+      margin: 0;
+      font-size: 1rem;
+      color: #555;
+    }
+  }
+}
+
+.portfolio-manager-image-wrapper {
+  position: relative;
+
+  img {
+    width: 100px;
+    height: 100px;
+    object-fit: cover;
+    border-radius: 4px;
+    margin-bottom: 10px;
+  }
+
+  .image-removal-link {
+    text-align: center;
+    margin-top: -10px;
+
+    a {
+      color: #e74c3c; /* Color del enlace de eliminación */
+      font-size: 0.9rem;
+      cursor: pointer;
+    }
+  }
+}
+
+/* Botón de guardar */
+.btn-save {
+  background: linear-gradient(135deg, #38ef7d, #11998e); /* Degradado verde */
+  color: white;
+  padding: 12px 44px;
+  border: none;
+  font-size: 1rem;
+  cursor: pointer;
+  border-radius: 50px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1); /* Sombra externa */
+  transition: background 0.3s ease, transform 0.3s ease;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  margin-left: 50px;
+
+  &:hover {
+    background: linear-gradient(
+      135deg,
+      #11998e,
+      #38ef7d
+    ); /* Inversión del degradado en hover */
+    transform: translateY(-2px); /* Efecto de elevación al hacer hover */
+  }
+}

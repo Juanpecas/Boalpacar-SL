@@ -1,0 +1,75 @@
+.login-modal {
+  .modal-content {
+    border-radius: 15px; // Bordes redondeados
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2); // Sombra suave
+  }
+
+  .modal-header {
+    background-color: #6c757d; // Color de fondo
+    color: white; // Color del texto
+    border-bottom: none; // Sin borde inferior
+    border-radius: 15px 15px 0 0; // Bordes redondeados solo arriba
+  }
+
+  .modal-title {
+    font-weight: bold; // Negrita
+  }
+
+  .login-input {
+    border-radius: 10px; // Bordes redondeados para inputs
+    box-shadow: 0 1px 5px rgba(0, 0, 0, 0.1); // Sombra suave
+  }
+
+  .btn-submit {
+    width: 100%; // Botón completo
+    padding: 10px; // Espaciado
+    margin-top: 10px; // Margen superior
+    background-color: #007bff; // Color primario
+    border: none; // Sin borde
+    transition: background-color 0.3s; // Transición suave
+
+    &:hover {
+      background-color: #0056b3; // Color más oscuro al pasar el mouse
+    }
+  }
+
+  .btn-switch {
+    margin-top: 15px; // Espacio superior
+    color: #007bff; // Color del enlace
+    text-decoration: underline; // Subrayado
+    transition: color 0.3s; // Transición suave
+
+    &:hover {
+      color: #0056b3; // Color más oscuro al pasar el mouse
+    }
+  }
+}
+
+.btn-google-login {
+  background-color: white;
+  border: 1px solid #4285f4;
+  color: #4285f4;
+  font-weight: bold;
+  padding: 10px 20px;
+  border-radius: 5px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background-color 0.3s ease;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  width: 100%;
+}
+
+.btn-google-login:hover {
+  background-color: #f7f7f7;
+}
+
+.btn-google-login:active {
+  background-color: #e6e6e6;
+}
+
+.btn-google-login img {
+  margin-right: 8px;
+  width: 20px;
+  height: 20px;
+}
