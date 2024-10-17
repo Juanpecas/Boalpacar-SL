@@ -2,7 +2,7 @@ require("dotenv").config();
 const express = require("express");
 const stripe = require("stripe")(process.env.STRIPE_SECRET_KEY);
 const cors = require("cors");
-const { Pool } = require("pg"); // Importamos Pool de pg
+const sqlite3 = require("sqlite3").verbose(); // Importar SQLite
 const helmet = require("helmet");
 
 const app = express();
@@ -12,23 +12,13 @@ app.use(cors());
 app.use(express.json());
 app.use(helmet()); // Seguridad adicional
 
-// Configuración de PostgreSQL
-const db = new Pool({
-  host: process.env.DB_HOST,
-  user: process.env.DB_USER,
-  password: process.env.DB_PASSWORD,
-  database: process.env.DB_NAME, // Asegúrate de que esto sea 'reservas'
-  port: process.env.DB_PORT,
-
-});
-
-// Conectar a PostgreSQL
-db.connect((err) => {
+// Configuración de SQLite
+const db = new sqlite3.Database(process.env.DB_NAME || "database.db", (err) => {
   if (err) {
-    console.error("Error al conectar a la base de datos PostgreSQL:", err);
-    return;
+    console.error("Error al conectar a la base de datos:", err.message);
+  } else {
+    console.log("Conectado a la base de datos SQLite");
   }
-  console.log("Conectado a la base de datos PostgreSQL 'reservas'");
 });
 
 // Mapeo de tipos de lavado a precios (en centavos)
@@ -110,25 +100,27 @@ app.post("/api/reservas", async (req, res) => {
     // Crear la consulta SQL para insertar la reserva
     const query = `
       INSERT INTO reservas (nombre, modelo, email, telefono, fecha, hora, tipoLavado, precio) 
-      VALUES ($1, $2, $3, $4, $5, $6, $7, $8) RETURNING id
+      VALUES (?, ?, ?, ?, ?, ?, ?, ?)
     `;
 
-    // Ejecutar la consulta de PostgreSQL
-    const result = await db.query(query, [
-      nombre,
-      modelo,
-      email,
-      telefono,
-      fecha,
-      hora,
-      tipoLavado,
-      precio,
-    ]);
+    // Ejecutar la consulta de SQLite
+    db.run(
+      query,
+      [nombre, modelo, email, telefono, fecha, hora, tipoLavado, precio],
+      function (err) {
+        if (err) {
+          console.error("Error al guardar la reserva:", err);
+          return res
+            .status(500)
+            .json({ message: "Error al guardar la reserva." });
+        }
 
-    res.status(200).json({
-      message: "Reserva guardada con éxito.",
-      reservaId: result.rows[0].id, // Obtener el ID de la reserva insertada
-    });
+        res.status(200).json({
+          message: "Reserva guardada con éxito.",
+          reservaId: this.lastID, // Obtiene el último ID insertado
+        });
+      }
+    );
   } catch (error) {
     console.error("Error al verificar el pago:", error);
     return res.status(500).json({ message: "Error al verificar el pago." });
