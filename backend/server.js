@@ -19,6 +19,7 @@ const db = new Pool({
   password: process.env.DB_PASSWORD,
   database: process.env.DB_NAME, // Asegúrate de que esto sea 'reservas'
   port: process.env.DB_PORT,
+
 });
 
 // Conectar a PostgreSQL
