@@ -19,18 +19,18 @@ const ModalReserva = ({ closeModal }) => {
   const navigate = useNavigate();
 
   const precios = {
-    "Limpieza interior coche": 20,
-    "Lavado exterior coche": 15,
-    "Limpieza interior y exterior coche": 30,
-    "Limpieza interior furgoneta": 20,
-    "Limpieza exterior furgoneta": 20,
-    "Limpieza interior y exterior furgoneta": 35,
-    "Limpieza interior camion": 20,
-    "Limpieza exterior camion": 50,
-    "Limpieza interior y exterior camion": 60,
-    "Petrole motor": 60,
-    "Tapicería coche o furgoneta": 150,
-    "Tapicería de camion": 180,
+    "Limpieza interior coche": 2000, // En centavos
+    "Lavado exterior coche": 1500, // En centavos
+    "Limpieza interior y exterior coche": 3000, // En centavos
+    "Limpieza interior furgoneta": 2000, // En centavos
+    "Limpieza exterior furgoneta": 2000, // En centavos
+    "Limpieza interior y exterior furgoneta": 3500, // En centavos
+    "Limpieza interior camion": 2000, // En centavos
+    "Limpieza exterior camion": 5000, // En centavos
+    "Limpieza interior y exterior camion": 6000, // En centavos
+    "Petroleo motor": 6000, // En centavos
+    "Tapicería coche o furgoneta": 15000, // En centavos
+    "Tapicería de camion": 18000, // En centavos
   };
 
   const validarFormulario = () => {
@@ -43,7 +43,7 @@ const ModalReserva = ({ closeModal }) => {
     if (!form.hora) nuevosErrores.hora = "La hora es obligatoria";
     if (!form.tipoLavado)
       nuevosErrores.tipoLavado = "Seleccione un tipo de lavado";
-    // Validación adicional para el email
+
     if (form.email && !/\S+@\S+\.\S+/.test(form.email)) {
       nuevosErrores.email = "Email inválido";
     }
@@ -55,8 +55,8 @@ const ModalReserva = ({ closeModal }) => {
     e.preventDefault();
     const errores = validarFormulario();
     if (Object.keys(errores).length === 0) {
+      // Solo si no hay errores
       setHorasReservadas([...horasReservadas, form.hora]);
-
       navigate("/checkout", { state: { form, precio } });
       closeModal();
     } else {
@@ -71,8 +71,9 @@ const ModalReserva = ({ closeModal }) => {
       [name]: value,
     }));
 
+    // Actualizar el precio basado en el tipo de lavado
     if (name === "tipoLavado") {
-      setPrecio(precios[value] || 0);
+      setPrecio(precios[value] || 0); // Actualizar el precio en centavos
     }
   };
 
@@ -99,7 +100,7 @@ const ModalReserva = ({ closeModal }) => {
         <button className="close-button" onClick={closeModal}>
           &times;
         </button>
-        <h4>Reserva de Servicios Boalpacar</h4>
+        <h6>Reserva de Servicios Boalpacar</h6>
         <form onSubmit={handleSubmit}>
           <div className="form-group">
             <label>Nombre</label>
@@ -197,7 +198,7 @@ const ModalReserva = ({ closeModal }) => {
               <option value="Limpieza interior y exterior camion">
                 Limpieza interior y exterior camion
               </option>
-              <option value="Petrole motor">Petrole motor</option>
+              <option value="Petroleo motor">Petroleo motor</option>
               <option value="Tapicería coche o furgoneta">
                 Tapicería coche o furgoneta
               </option>
@@ -206,7 +207,8 @@ const ModalReserva = ({ closeModal }) => {
             {errors.tipoLavado && <p className="error">{errors.tipoLavado}</p>}
           </div>
           <div className="form-group">
-            <h4>Precio: ${precio}</h4>
+            <h4>Precio: €{(precio / 100).toFixed(2)}</h4>{" "}
+            {/* Muestra el precio en euros */}
           </div>
 
           <div className="additional-info">
@@ -216,17 +218,8 @@ const ModalReserva = ({ closeModal }) => {
               garantizar un servicio de alta calidad.
             </p>
           </div>
-          <div className="button-modal">
-            <button type="submit" className="button-submit">
-              Reservar
-            </button>
-            <button
-              type="button"
-              className="button-cancel"
-              onClick={closeModal}
-            >
-              Cancelar
-            </button>
+          <div className="form-group">
+            <button type="submit">Reservar</button>
           </div>
         </form>
       </div>

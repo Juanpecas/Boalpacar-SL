@@ -78,3 +78,34 @@
   margin-right: 40px;
 }
 
+@media (max-width: 768px) {
+  .nav-wrapper {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .left-side {
+    flex-wrap: wrap; /* Permitir que los elementos se envuelvan */
+  }
+
+  .nav-link-wrapper a {
+    font-size: 10px;
+
+      }
+    
+  .banner-logo img {
+    width: 80px;
+    margin-right: 0;
+  }
+}
+
+/* Pantallas extra pequeñas (móviles muy pequeños) */
+@media (max-width: 480px) {
+  .nav-wrapper {
+    padding: 10px; /* Menos padding en pantallas pequeñas */
+  }
+
+  .nav-link-active {
+    font-size: 14px; /* Tamaño de fuente más pequeño para enlaces activos */
+  }
+}

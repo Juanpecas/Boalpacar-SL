@@ -24,6 +24,7 @@ import Footer from "./footer/Footer";
 
 const stripePromise = loadStripe(
   "pk_test_51QAGC6EJxV1jBn9lcFqz8F4GTgt50k9GGwjSmTIQh2QNVYsqbtgwtC4ul8tZN6IZOMV3Sys2bRPxlyMZRn6bN81l00vXkUwXeV"
+  
 );
 
 export default class App extends Component {

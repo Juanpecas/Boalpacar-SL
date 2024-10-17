@@ -24,7 +24,7 @@ dist-ssr
 *.sw?
 
 # Ignorar el archivo .env
-.env
+
 
 
 # Ignorar dependencias de Node.js (frontend y backend)

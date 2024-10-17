@@ -18,7 +18,7 @@
     width: 80%; /* Ancho del modal */
     max-width: 500px; /* Ancho máximo */
 
-    h4 {
+    h6 {
       text-align: center;
       font-family: "Roboto", sans-serif; // Tipografía atractiva
       font-size: 1.5rem;
@@ -133,4 +133,76 @@ select {
   font-size: 14px; /* Puedes ajustar el tamaño de la fuente */
   color: #555; /* Color más suave para un mensaje informativo */
   font-weight: 500; /* Peso de fuente para hacerlo más legible */
+}
+
+/* Media Queries para ajustar el tamaño en pantallas pequeñas */
+@media (max-width: 768px) {
+  .modal-overlay .modals {
+    padding: 1px !important; /* Reduce el padding del modal */
+    max-width: 250px !important;
+    height: 150px;
+    margin: 0 !important;
+  }
+
+  h6 {
+    font-size: 1.25rem !important; /* Reduce el tamaño de fuente del título */
+    margin-bottom: 1px !important; /* Reduce el margen inferior */
+  }
+  .form-group {
+    margin: 0 !important;
+  }
+  .close-button {
+    font-size: 1.25rem; /* Reduce el tamaño del botón de cierre */
+  }
+
+  input[type="text"],
+  input[type="email"],
+  input[type="tel"],
+  input[type="date"],
+  select {
+    padding: 2px; /* Reduce el padding de los inputs */
+    font-size: 20px; /* Reduce el tamaño de la fuente de los inputs */
+  }
+
+  .button-submit,
+  .button-cancel {
+    padding: 10px 20px; /* Reduce el tamaño del padding */
+    font-size: 0.9rem; /* Reduce el tamaño de la fuente de los botones */
+  }
+}
+
+@media (max-width: 480px) {
+  .modal-overlay .modals {
+    padding: 10px; /* Reduce aún más el padding */
+    width: 65% !important; /* Aumenta el ancho en pantallas más pequeñas */
+    max-width: 50px !important; /* Disminuye el ancho máximo */
+  }
+
+  h4 {
+    font-size: 1.1rem; /* Reduce más el tamaño de fuente del título */
+    margin-bottom: 10px; /* Reduce aún más el margen */
+  }
+
+  .close-button {
+    font-size: 1rem; /* Reduce aún más el tamaño del botón de cierre */
+  }
+
+  input[type="text"],
+  input[type="email"],
+  input[type="tel"],
+  input[type="date"],
+  select {
+    padding: 4px; /* Reduce aún más el padding de los inputs */
+    font-size: 0.8rem; /* Reduce el tamaño de la fuente de los inputs */
+  }
+
+  .button-submit,
+  .button-cancel {
+    padding: 8px 16px; /* Reduce el tamaño del padding */
+    font-size: 0.8rem; /* Reduce el tamaño de la fuente de los botones */
+  }
+
+  .additional-info {
+    font-size: 12px; /* Reduce el tamaño de la fuente de información adicional */
+  }
 }

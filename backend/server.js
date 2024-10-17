@@ -2,7 +2,7 @@ require("dotenv").config();
 const express = require("express");
 const stripe = require("stripe")(process.env.STRIPE_SECRET_KEY);
 const cors = require("cors");
-const sqlite3 = require("sqlite3").verbose(); // Importar SQLite
+const sqlite3 = require("sqlite3").verbose();
 const helmet = require("helmet");
 
 const app = express();
@@ -23,43 +23,56 @@ const db = new sqlite3.Database(process.env.DB_NAME || "database.db", (err) => {
 
 // Mapeo de tipos de lavado a precios (en centavos)
 const preciosLavado = {
-  limpiezaInteriorCoche: 2000,
-  exteriorCoche: 1500,
-  limpiezaInteriorYExteriorCoche: 3000,
-  limpiezaFurgonetaInterior: 2000,
-  limpiezaFurgonetaExterior: 2000,
-  limpiezaFurgonetaCompleto: 3500,
-  limpiezaCamionInterior: 2000,
-  limpiezaCamionExterior: 5000,
-  limpiezaCamionCompleto: 6000,
-  petroleMotor: 6000,
-  tapiceriaCocheFurgoneta: 15000,
-  tapiceriaCamion: 18000,
+  "Limpieza interior coche": 2000, // En centavos
+  "Lavado exterior coche": 1500, // En centavos
+  "Limpieza interior y exterior coche": 3000, // En centavos
+  "Limpieza interior furgoneta": 2000, // En centavos
+  "Limpieza exterior furgoneta": 2000, // En centavos
+  "Limpieza interior y exterior furgoneta": 3500, // En centavos
+  "Limpieza interior camion": 2000, // En centavos
+  "Limpieza exterior camion": 5000, // En centavos
+  "Limpieza interior y exterior camion": 6000, // En centavos
+  "Petrole motor": 6000, // En centavos
+  "Tapicería coche o furgoneta": 15000, // En centavos
+  "Tapicería de camion": 18000, // En centavos
 };
 
 // Endpoint para crear el Payment Intent
 app.post("/create-payment-intent", async (req, res) => {
   const { tipoLavado } = req.body;
-  const amount = preciosLavado[tipoLavado];
 
   // Verificar si el tipo de lavado es válido
-  if (!amount) {
+  if (!tipoLavado || !preciosLavado.hasOwnProperty(tipoLavado)) {
     return res.status(400).json({ error: "Tipo de lavado no válido." });
   }
+
+  const amount = preciosLavado[tipoLavado];
+
+  console.log(
+    `Creando Payment Intent para ${tipoLavado} con el monto: €${(
+      amount / 100
+    ).toFixed(2)}`
+  );
 
   try {
     const paymentIntent = await stripe.paymentIntents.create({
       amount,
-      currency: "eur", // Moneda en euros
+      currency: "eur",
     });
 
     res.status(200).send({ clientSecret: paymentIntent.client_secret });
   } catch (error) {
     console.error("Error al crear el Payment Intent:", error);
-    res.status(500).send({ error: error.message });
+    return res.status(400).send({
+      error:
+        "Error al crear el Payment Intent. Asegúrese de que la solicitud sea válida.",
+    });
   }
 });
 
+// Endpoint para guardar los datos de la reserva
+// Endpoint para guardar los datos de la reserva
+// Endpoint para guardar los datos de la reserva
 // Endpoint para guardar los datos de la reserva
 app.post("/api/reservas", async (req, res) => {
   const {
@@ -110,25 +123,28 @@ app.post("/api/reservas", async (req, res) => {
       function (err) {
         if (err) {
           console.error("Error al guardar la reserva:", err);
-          return res
-            .status(500)
-            .json({ message: "Error al guardar la reserva." });
+          return res.status(500).json({
+            message: "Error al guardar la reserva en la base de datos.",
+          });
         }
 
         res.status(200).json({
           message: "Reserva guardada con éxito.",
-          reservaId: this.lastID, // Obtiene el último ID insertado
+          reservaId: this.lastID,
         });
       }
     );
   } catch (error) {
     console.error("Error al verificar el pago:", error);
-    return res.status(500).json({ message: "Error al verificar el pago." });
+    return res.status(500).json({
+      message: "Error al verificar el pago.",
+      error: error.message, // Agrega el mensaje de error aquí
+    });
   }
 });
 
 // Iniciar el servidor en el puerto 5000
-const PORT = process.env.PORT || 5000;
+const PORT = process.env.PORT || 5001;
 app.listen(PORT, () => {
   console.log(`Servidor escuchando en el puerto ${PORT}`);
 });
