@@ -1,11 +1,11 @@
 # Backend para Procesamiento de Pagos y Gestión de Reservas
 
-Este es un backend construido con **Node.js** y **Express** para procesar pagos mediante **Stripe** y almacenar reservas en una base de datos **MySQL**. Además, utiliza **CORS** y **Helmet** para seguridad y admite diferentes tipos de servicios de lavado de vehículos con precios específicos.
+Este es un backend construido con **Node.js** y **Express** para procesar pagos mediante **Stripe** y almacenar reservas en una base de datos **SQLITE3**. Además, utiliza **CORS** y **Helmet** para seguridad y admite diferentes tipos de servicios de lavado de vehículos con precios específicos.
 
 ## Características
 
 - Procesa pagos utilizando **Stripe**.
-- Almacena reservas de servicios de lavado de vehículos en una base de datos **MySQL**.
+- Almacena reservas de servicios de lavado de vehículos en una base de datos **SQLITE3**.
 - Seguridad adicional mediante **Helmet** y configuraciones de **Content Security Policy (CSP)**.
 - **API RESTful** con endpoints para creación de pagos y gestión de reservas.
 
@@ -14,7 +14,7 @@ Este es un backend construido con **Node.js** y **Express** para procesar pagos 
 Para ejecutar este proyecto necesitas tener instalados los siguientes componentes:
 
 - **Node.js** (v14+)
-- **MySQL**
+- **SQLITE3**
 - **Stripe Account** (para obtener las claves de Stripe)
 
 ## Instalación
@@ -35,11 +35,9 @@ Para ejecutar este proyecto necesitas tener instalados los siguientes componente
     # Stripe Keys
     STRIPE_SECRET_KEY=sk_test_XXXXXXXXXXXXXXXXXXXXXXXX
 
-    # MySQL Database Configuration
-    DB_HOST=localhost
-    DB_USER=tu_usuario_mysql
-    DB_PASSWORD=tu_contraseña_mysql
-    DB_NAME=reservas
+    # SQLITE3 Database Configuration
+    DB_NAME=database.db
+
 
 ## Nota importante:
     
@@ -119,7 +117,7 @@ Este backend usa las siguientes medidas de seguridad:
 
 - **Express**: Framework de Node.js para construir la API.
 - **Stripe**: Procesamiento de pagos.
-- **MySQL**: Base de datos para almacenar las reservas.
+- **SQLITE3**: Base de datos para almacenar las reservas.
 - **CORS**: Middleware para habilitar CORS.
 - **Helmet**: Mejoras de seguridad para la API.
 

@@ -41,7 +41,7 @@ Este proyecto es una plataforma web para ofrecer y solicitar **servicios de lava
   
 - **Backend**:
   - **Node.js & Express**: Backend para gestionar las solicitudes, reservas y procesamiento de pagos.
-  - **MySQL**: Base de datos para almacenar información de usuarios, reservas y servicios disponibles.
+  - **SQLITE3**: Base de datos para almacenar información de usuarios, reservas y servicios disponibles.
   - **Stripe**: Servicio de procesamiento de pagos en línea.
   
 - **Seguridad**:
@@ -56,7 +56,7 @@ Este proyecto es una plataforma web para ofrecer y solicitar **servicios de lava
 
 2. **Realiza la Reserva**: Introduce tus datos, elige la fecha y la hora, y confirma la reserva.
 
-3. **Pago Seguro**: Realiza el pago directamente desde la plataforma mediante la integración con Stripe.
+3. **Pago Seguro**: Realiza el pago directamente desde la plataforma mediante la integración con Stripe, ademas de se habilita un boton para pagar en el establecimiento comercial.
 
 4. **Recibe Confirmación**: Una vez confirmado el pago, recibirás un correo electrónico con los detalles de tu reserva.
 
@@ -78,8 +78,8 @@ Este proyecto está bajo la **Licencia MIT**. Puedes ver más detalles en el arc
 
 Si tienes alguna duda o sugerencia, puedes contactarnos a través de:
 
-- **Email**: soporte@lavado-de-coches.com
+- **Email**: soporte@Boalpacar.com
 - **Teléfono**: +123 456 789
-- **Página Web**: [www.lavado-de-coches.com](http://www.lavado-de-coches.com)
+- **Página Web**: en construccion
 
 ---
