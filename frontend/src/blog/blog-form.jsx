@@ -4,7 +4,7 @@ import { useDropzone } from "react-dropzone"; // Cambia la importación aquí
 import ReactHtmlParser from "html-react-parser";
 import "dropzone/dist/dropzone.css"; // Mantener el estilo de Dropzone original
 
-import RichTextEditor from "../forms/rich-text-editor";
+import RichTextEditor from "../forms/RichTextEditor";
 import PropTypes from "prop-types";
 
 const BlogForm = (props) => {

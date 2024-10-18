@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import axios from "axios";
-import PortfolioSidebarList from "../portfolio/portfolio-sidebar-list";
-import PortfolioForm from "../portfolio/portfolio-form";
+import PortfolioSidebarList from "../portfolio/PortfolioSidebarList";
+import PortfolioForm from "../portfolio/PortfolioForm";
 
 export default class AdminPanelPage extends Component {
   state = {

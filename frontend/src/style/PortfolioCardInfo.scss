@@ -88,38 +88,38 @@
 }
 
 .directions-link {
-  margin-top: 20px; /* Espacio superior para separar del contenido anterior */
-  text-align: center; /* Centrar el enlace */
+  margin-top: 20px; 
+  text-align: center; 
 }
 
 .directions-link a {
-  display: inline-block; /* Hacer que el enlace se comporte como un bloque en línea */
+  display: inline-block; 
   background: linear-gradient(135deg, #061ab3, #a2b3ff);
-  color: white; /* Color del texto */
-  padding: 10px 20px; /* Espaciado interno */
-  border-radius: 25px; /* Bordes redondeados */
-  text-decoration: none; /* Sin subrayado */
-  font-weight: bold; /* Texto en negrita */
+  color: white; 
+  padding: 10px 20px; 
+  border-radius: 25px; 
+  text-decoration: none; 
+  font-weight: bold; 
   transition: transform 0.3s, box-shadow 0.3s;
 
   &:hover {
-    transform: translateY(-4px); // Elevar el contenedor
-    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3); // Sombra más profunda
+    transform: translateY(-4px); 
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3); 
   }
 
   span {
     margin-right: 8px;
     cursor: pointer;
-    font-weight: 600; // Negrita
-    color: #fff; // Color blanco
+    font-weight: 600; 
+    color: #fff; 
     font-size: 16px;
-    transition: color 0.3s; // Transición suave para el color
+    transition: color 0.3s; 
 
-    // Se eliminó el efecto de color al pasar el mouse.
+    
   }
 }
 
-/* Middle-two */
+
 .wrapper-middle-two {
   background: radial-gradient(ellipse, #414283, #ffffff);
   padding: 35px 40px;
@@ -173,12 +173,12 @@
     
 
     h5 {
-      font-size: 15px !important; /* Tamaño de fuente más pequeño */
+      font-size: 15px !important; 
      
     }
 
     h6 {
-      font-size: 10px !important; /* Tamaño de fuente más pequeño */
+      font-size: 10px !important; 
      
     }
   }

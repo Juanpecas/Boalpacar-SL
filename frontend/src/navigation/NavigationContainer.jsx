@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import { NavLink, useNavigate } from "react-router-dom";
-import BannerLogo from "../pages/banner-logo";
+import BannerLogo from "../pages/BannerLogo";
 import ReservaControl from "../modal/ReservaControl";
 import AuthButton from "../auth/AuthBotton";
 

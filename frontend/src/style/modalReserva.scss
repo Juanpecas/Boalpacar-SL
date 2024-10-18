@@ -52,43 +52,43 @@ select {
   width: 100%;
   color: white;
   padding: 12px;
-  border: 1px solid #ddd; // Borde del input
-  border-radius: 10px; // Esquinas más redondeadas
+  border: 1px solid #ddd; 
+  border-radius: 10px; 
   font-size: 1rem;
   transition: border 0.3s ease, box-shadow 0.3s ease;
   margin-bottom: 15px;
-  background-color: #b6acac; // Fondo claro
-  box-shadow: inset 0 2px 5px rgba(0, 0, 0, 0.05); // Sombra interna suave
+  background-color: #b6acac; 
+  box-shadow: inset 0 2px 5px rgba(0, 0, 0, 0.05); 
 
   &:focus {
-    border-color: #007bff; // Color azul en foco
+    border-color: #007bff; 
     outline: none;
-    box-shadow: 0 0 5px rgba(0, 123, 255, 0.5); // Resaltar el borde al enfocarse
+    box-shadow: 0 0 5px rgba(0, 123, 255, 0.5); 
   }
 }
 
 .error {
-  color: #e74c3c; // Rojo más atractivo
+  color: #e74c3c; 
   font-size: 0.875rem;
-  margin-top: -10px; // Reduce espacio entre el mensaje de error y el input
+  margin-top: -10px; 
   margin-bottom: 15px;
 }
 
 .button-modal {
   display: flex;
-  justify-content: space-between; // Espacio entre los botones
+  justify-content: space-between; 
   margin-top: 20px;
 }
 
 .button-submit {
-  background: linear-gradient(135deg, #38ef7d, #11998e); // Degradado verde
+  background: linear-gradient(135deg, #38ef7d, #11998e); 
   color: white;
   padding: 12px 24px;
   border: none;
   font-size: 1rem;
   cursor: pointer;
   border-radius: 50px;
-  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1); // Sombra externa
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1); 
   transition: background 0.3s ease, transform 0.3s ease;
   display: inline-flex;
   align-items: center;
@@ -99,20 +99,20 @@ select {
       135deg,
       #11998e,
       #38ef7d
-    ); // Inversión del degradado en hover
-    transform: translateY(-2px); // Efecto de elevación al hacer hover
+    ); 
+    transform: translateY(-2px); 
   }
 }
 
 .button-cancel {
-  background: linear-gradient(135deg, #ff6a6a, #ff4757); // Degradado rojo
+  background: linear-gradient(135deg, #ff6a6a, #ff4757); 
   color: white;
   padding: 12px 24px;
   border: none;
   font-size: 1rem;
   cursor: pointer;
   border-radius: 50px;
-  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1); // Sombra
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1); 
   transition: background 0.3s ease, transform 0.3s ease;
   display: inline-flex;
   align-items: center;
@@ -123,19 +123,19 @@ select {
       135deg,
       #ff4757,
       #ff6a6a
-    ); // Inversión del degradado
-    transform: translateY(-2px); // Efecto de elevación al hacer hover
+    ); 
+    transform: translateY(-2px); 
   }
 }
 
 .additional-info {
   margin-top: 10px;
-  font-size: 14px; /* Puedes ajustar el tamaño de la fuente */
-  color: #555; /* Color más suave para un mensaje informativo */
-  font-weight: 500; /* Peso de fuente para hacerlo más legible */
+  font-size: 14px;
+  color: #555; 
+  font-weight: 500; 
 }
 
-/* Media Queries para ajustar el tamaño en pantallas pequeñas */
+
 @media (max-width: 768px) {
   .modal-overlay {
     display: flex;
@@ -187,25 +187,25 @@ select {
     display: flex;
     justify-content: center;
     align-items: center;
-    padding: 5px; /* Reduce el padding para pantallas más pequeñas */
+    padding: 5px; 
   }
 
   .modal-overlay .modals {
-    width: 90%; /* Ocupa el 90% del ancho de la pantalla */
-    max-width: 280px; /* Reduce el ancho máximo */
-    max-height: 250px; /* Limita la altura máxima para pantallas pequeñas */
-    overflow-y: auto; /* Habilita el scroll vertical si es necesario */
+    width: 90%; 
+    max-width: 280px; 
+    max-height: 250px; 
+    overflow-y: auto; 
     margin: 0 auto !important;
-    padding: 8px !important; /* Reduce el padding interno */
+    padding: 8px !important; 
   }
 
   h4 {
-    font-size: 1rem; /* Ajusta el tamaño de la fuente */
+    font-size: 1rem; 
     margin-bottom: 8px;
   }
 
   .close-button {
-    font-size: 0.9rem; /* Ajusta el tamaño del botón de cierre */
+    font-size: 0.9rem; 
   }
 
   input[type="text"],
@@ -214,16 +214,16 @@ select {
   input[type="date"],
   select {
     padding: 3px;
-    font-size: 0.75rem; /* Reduce aún más el tamaño de la fuente */
+    font-size: 0.75rem; 
   }
 
   .button-submit,
   .button-cancel {
-    padding: 6px 12px; /* Reduce el tamaño del padding de los botones */
-    font-size: 0.75rem; /* Reduce el tamaño de la fuente de los botones */
+    padding: 6px 12px; 
+    font-size: 0.75rem; 
   }
 
   .additional-info {
-    font-size: 10px; /* Reduce aún más el tamaño de la fuente de la info adicional */
+    font-size: 10px;
   }
 }

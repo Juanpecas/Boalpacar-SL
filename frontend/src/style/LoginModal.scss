@@ -1,46 +1,46 @@
 .login-modal {
   .modal-content {
-    border-radius: 15px; // Bordes redondeados
-    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2); // Sombra suave
+    border-radius: 15px; 
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2); 
   }
 
   .modal-header {
-    background-color: #6c757d; // Color de fondo
-    color: white; // Color del texto
-    border-bottom: none; // Sin borde inferior
-    border-radius: 15px 15px 0 0; // Bordes redondeados solo arriba
+    background-color: #6c757d; 
+    color: white; 
+    border-bottom: none; 
+    border-radius: 15px 15px 0 0; 
   }
 
   .modal-title {
-    font-weight: bold; // Negrita
+    font-weight: bold;
   }
 
   .login-input {
-    border-radius: 10px; // Bordes redondeados para inputs
-    box-shadow: 0 1px 5px rgba(0, 0, 0, 0.1); // Sombra suave
+    border-radius: 10px; 
+    box-shadow: 0 1px 5px rgba(0, 0, 0, 0.1); 
   }
 
   .btn-submit {
-    width: 100%; // Botón completo
-    padding: 10px; // Espaciado
-    margin-top: 10px; // Margen superior
-    background-color: #007bff; // Color primario
-    border: none; // Sin borde
-    transition: background-color 0.3s; // Transición suave
+    width: 100%; 
+    padding: 10px; 
+    margin-top: 10px; 
+    background-color: #007bff; 
+    border: none; 
+    transition: background-color 0.3s; 
 
     &:hover {
-      background-color: #0056b3; // Color más oscuro al pasar el mouse
+      background-color: #0056b3; 
     }
   }
 
   .btn-switch {
-    margin-top: 15px; // Espacio superior
-    color: #007bff; // Color del enlace
-    text-decoration: underline; // Subrayado
-    transition: color 0.3s; // Transición suave
+    margin-top: 15px; 
+    color: #007bff; 
+    text-decoration: underline; 
+    transition: color 0.3s; 
 
     &:hover {
-      color: #0056b3; // Color más oscuro al pasar el mouse
+      color: #0056b3; 
     }
   }
 }
@@ -76,48 +76,48 @@
 
 @media (max-width: 768px) {
   .btn-submit {
-    padding: 8px; /* Reduce el padding en pantallas medianas */
-    font-size: 0.9rem; /* Reduce el tamaño de la fuente */
-    margin-top: 8px; /* Reduce el margen superior */
+    padding: 8px; 
+    font-size: 0.9rem; 
+    margin-top: 8px; 
   }
 
   .btn-switch {
-    margin-top: 10px; /* Reduce el margen superior */
-    font-size: 0.85rem; /* Reduce el tamaño de la fuente */
+    margin-top: 10px; 
+    font-size: 0.85rem; 
   }
 
   .btn-google-login {
-    padding: 8px 16px; /* Reduce el padding */
-    font-size: 0.9rem; /* Reduce el tamaño de la fuente */
-    width: 100%; /* Asegura que el botón ocupe el ancho completo */
+    padding: 8px 16px; 
+    font-size: 0.9rem; 
+    width: 100%; 
   }
 
   .btn-google-login img {
-    width: 18px; /* Reduce el tamaño del ícono */
+    width: 18px; 
     height: 18px;
   }
 }
 
 @media (max-width: 480px) {
   .btn-submit {
-    padding: 6px; /* Reduce más el padding en pantallas pequeñas */
-    font-size: 0.8rem; /* Reduce el tamaño de la fuente */
-    margin-top: 6px; /* Reduce el margen superior */
+    padding: 6px; 
+    font-size: 0.8rem; 
+    margin-top: 6px; 
   }
 
   .btn-switch {
-    margin-top: 8px; /* Reduce el margen superior */
-    font-size: 0.75rem; /* Reduce aún más el tamaño de la fuente */
+    margin-top: 8px; 
+    font-size: 0.75rem; 
   }
 
   .btn-google-login {
-    padding: 6px 12px; /* Reduce aún más el padding */
-    font-size: 0.8rem; /* Reduce el tamaño de la fuente */
-    width: 100%; /* Asegura que ocupe el ancho completo */
+    padding: 6px 12px; 
+    font-size: 0.8rem; 
+    width: 100%; 
   }
 
   .btn-google-login img {
-    width: 16px; /* Reduce aún más el tamaño del ícono */
+    width: 16px; 
     height: 16px;
   }
 }

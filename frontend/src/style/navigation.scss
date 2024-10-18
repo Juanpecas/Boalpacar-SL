@@ -89,7 +89,7 @@
   }
 
   .left-side {
-    flex-wrap: wrap; /* Permitir que los elementos se envuelvan */
+    flex-wrap: wrap;  
   }
 
   .nav-link-wrapper a {
@@ -103,14 +103,14 @@
   }
 }
 
-/* Pantallas extra pequeñas (móviles muy pequeños) */
+
 @media (max-width: 480px) {
   .nav-wrapper {
-    padding: 10px; /* Menos padding en pantallas pequeñas */
+    padding: 10px; 
     margin-bottom: 20px !important;
   }
 
   .nav-link-active {
-    font-size: 14px; /* Tamaño de fuente más pequeño para enlaces activos */
+    font-size: 14px; 
   }
 }

@@ -1,49 +1,49 @@
-/* Contenedor principal */
+
 .ventas-container {
-    max-width: 600px; /* Ancho máximo */
-    margin: 2rem auto; /* Centrando el contenedor */
-    padding: 2rem; /* Espaciado interno */
-    background-color: #ffffff; /* Fondo blanco */
-    border-radius: 8px; /* Bordes redondeados */
-    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1); /* Sombra suave */
-    text-align: center; /* Centrando texto */
+    max-width: 600px; 
+    margin: 2rem auto; 
+    padding: 2rem; 
+    background-color: #ffffff; 
+    border-radius: 8px; 
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1); 
+    text-align: center; 
   }
   
-  /* Estilo para el título */
+
   .ventas-title {
-    font-size: 2.5rem; /* Tamaño de fuente grande */
-    color: #007bff; /* Color azul */
-    margin-bottom: 1rem; /* Margen inferior */
+    font-size: 2.5rem; 
+    color: #007bff; 
+    margin-bottom: 1rem; 
   }
   
-  /* Estilo para el mensaje */
+
   .ventas-message {
-    font-size: 1.2rem; /* Tamaño de fuente */
-    color: #333; /* Color del texto */
-    margin-bottom: 2rem; /* Margen inferior */
-    line-height: 1.5; /* Altura de línea */
+    font-size: 1.2rem; 
+    color: #333; 
+    margin-bottom: 2rem; 
+    line-height: 1.5; 
   }
   
-  /* Estilo para el ícono */
+
   .ventas-icon {
-    margin-bottom: 2rem; /* Margen inferior */
+    margin-bottom: 2rem; 
   }
   
-  /* Estilo para el botón */
+
   .ventas-button {
-    display: inline-block; /* Hacer que el botón se comporte como un bloque */
-    padding: 0.75rem 1.5rem; /* Espaciado interno del botón */
-    font-size: 1.2rem; /* Tamaño de fuente del botón */
-    color: #ffffff; /* Color del texto */
-    background-color: #007bff; /* Color de fondo */
-    border: none; /* Sin borde */
-    border-radius: 5px; /* Bordes redondeados */
-    text-decoration: none; /* Sin subrayado */
-    transition: background-color 0.3s ease; /* Transición suave para hover */
+    display: inline-block; 
+    padding: 0.75rem 1.5rem; 
+    font-size: 1.2rem; 
+    color: #ffffff; 
+    background-color: #007bff; 
+    border: none; 
+    border-radius: 5px; 
+    text-decoration: none; 
+    transition: background-color 0.3s ease; 
   }
   
-  /* Efecto hover para el botón */
+
   .ventas-button:hover {
-    background-color: #0056b3; /* Color más oscuro al pasar el mouse */
+    background-color: #0056b3; 
   }
   

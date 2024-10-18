@@ -80,20 +80,20 @@
 }
 
 .reserve-button {
-  padding: 6px 12px; /* Ajusta el tamaño del botón */
-  border: none; /* Sin bordes */
-  border-radius: 5px; /* Bordes redondeados */
-  background-color: #4caf50; /* Color del botón */
-  color: white; /* Color del texto */
-  cursor: pointer; /* Cambia el cursor al pasar el mouse */
-  transition: background-color 0.3s; /* Transición suave para el hover */
+  padding: 6px 12px; 
+  border: none; 
+  border-radius: 5px; 
+  background-color: #4caf50; 
+  color: white; 
+  cursor: pointer; 
+  transition: background-color 0.3s; 
 }
 
 .reserve-button:hover {
-  background-color: #388e3c; /* Color más oscuro al hacer hover */
+  background-color: #388e3c; 
 }
 
-/* Estilos adicionales para el modal */
+
 .modal-content {
   padding: 20px;
   border-radius: 8px;
@@ -101,33 +101,33 @@
 }
 
 .logo-wrapper {
-  width: 70px; /* Ancho máximo del contenedor del logo */
-  height: 70px; /* Altura máxima del contenedor del logo */
-  display: flex; /* Usar flexbox para centrar la imagen */
-  justify-content: center; /* Centra horizontalmente */
-  align-items: center; /* Centra verticalmente */
-  overflow: hidden; /* Oculta cualquier parte de la imagen que sobresalga */
-  border-radius: 50%; /* Bordes redondeados para un efecto circular */
+  width: 70px; 
+  height: 70px; 
+  display: flex; 
+  justify-content: center; 
+  align-items: center; 
+  overflow: hidden; 
+  border-radius: 50%; 
   background-color: rgba(
     255,
     255,
     255,
     0.8
-  ); /* Fondo semi-transparente para un contraste suave */
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); /* Sombra suave para profundidad */
+  ); 
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); 
 }
 
 .logo-wrapper img {
-  max-width: 100%; /* Limita el ancho máximo de la imagen */
-  max-height: 100%; /* Limita la altura máxima de la imagen */
-  object-fit: contain; /* Mantiene la relación de aspecto sin recortar */
+  max-width: 100%; 
+  max-height: 100%; 
+  object-fit: contain; 
 }
 
 @media (max-width: 768px) {
   .portfolio-items-wrapper {
-    grid-template-columns: repeat(2, 1fr); /* Pasa a dos columnas en pantallas medianas */
-    gap: 10px; /* Reduce el espacio entre elementos */
-    margin: 15px; /* Reduce el margen exterior */
+    grid-template-columns: repeat(2, 1fr); 
+    gap: 10px; 
+    margin: 15px; 
   }
 
   .portfolio-item-wrapper {
@@ -139,23 +139,23 @@
   }
 
   .title {
-    font-size: 0.85rem; /* Reduce el tamaño del título */
-    padding: 4px 8px; /* Reduce el padding */
+    font-size: 0.85rem; 
+    padding: 4px 8px; 
     color: rgb(190, 183, 173) !important;
   }
 
   .subtitle {
-    font-size: 0.6rem !important; /* Reduce el tamaño del subtítulo */
-    padding: 8px; /* Reduce el padding */
-    margin-top: 8px; /* Reduce la separación superior */
+    font-size: 0.6rem !important; 
+    padding: 8px; 
+    margin-top: 8px; 
   }
 
   .reserve-button {
-    padding: 5px 10px; /* Reduce el tamaño del botón */
+    padding: 5px 10px; 
   }
 
   .logo-wrapper {
-    width: 60px; /* Reduce el tamaño del logo */
+    width: 60px; 
     height: 60px;
   }
 }

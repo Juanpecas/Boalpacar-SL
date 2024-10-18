@@ -3,15 +3,15 @@ import React, { Component } from "react";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import axios from "axios";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import NavigationContainer from "./navigation/navigation-container";
-import Inicio from "./pages/inicio";
-import Ofertas from "./pages/ofertas";
-import Servicios from "./pages/servicios";
-import BlogDetail from "./pages/blog-detail";
-import NoMatch from "./pages/no-match";
+import NavigationContainer from "./navigation/NavigationContainer";
+import Inicio from "./pages/Inicio";
+import Ofertas from "./pages/Ofertas";
+import Servicios from "./pages/Servicios";
+import BlogDetail from "./pages/BlogDetail";
+import NoMatch from "./pages/NoMatch";
 import ProtectedRoute from "./auth/ProtectedRoute";
 import AdminPanelPage from "./pages/AdminPanelPage";
-import Icons from "./helpers/icon";
+import Icons from "./helpers/Icon";
 import CheckoutForm from "./pagos/CheckoutForm";
 import CookieConsentBanner from "./cookies/CookieConsentBanner"; // Importa el componente de consentimiento de cookies
 import ContactButtons from "./ContactButtons/ContactButtons";
@@ -20,7 +20,7 @@ import "bootstrap/dist/css/bootstrap.min.css";
 import { loadStripe } from "@stripe/stripe-js";
 import { Elements } from "@stripe/react-stripe-js";
 import Footer from "./footer/Footer";
-import Conocenos from "./pages/conócenos";
+import Conocenos from "./pages/Conócenos";
 
 const stripePromise = loadStripe(
   "pk_test_51QAGC6EJxV1jBn9lcFqz8F4GTgt50k9GGwjSmTIQh2QNVYsqbtgwtC4ul8tZN6IZOMV3Sys2bRPxlyMZRn6bN81l00vXkUwXeV"
