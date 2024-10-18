@@ -64,3 +64,54 @@
     }
   }
 }
+
+@media (max-width: 768px) {
+  .right-side {
+    
+    background: none;
+    box-shadow: none !important;
+    padding: 0; /* Reduce el padding */
+    border-radius: 17px; /* Reduce el borde redondeado */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15); /* Menos sombra */
+
+    span {
+      font-size: 10px; /* Reduce el tamaño de la fuente */
+      
+    }
+
+    .fa-sign-in-alt {
+      font-size: 18px; /* Reduce el tamaño del icono */
+    }
+  }
+
+  .btn-admin-cerrar .btn {
+    padding: 4px 8px; /* Reduce el padding del botón */
+    border-radius: 20px; /* Reduce el borde redondeado */
+    font-size: 14px; /* Reduce el tamaño de la fuente */
+    margin-right: 6px; /* Reduce el margen derecho */
+  }
+}
+
+@media (max-width: 480px) {
+  .right-side {
+    padding: 5px 10px; /* Reduce aún más el padding */
+    border-radius: 15px; /* Bordes aún más redondeados */
+    box-shadow: 0 3px 8px rgba(0, 0, 0, 0.1); /* Menos sombra */
+
+    span {
+      margin-right: 4px; /* Reduce aún más el margen */
+      font-size: 12px; /* Reduce más el tamaño de la fuente */
+    }
+
+    .fa-sign-in-alt {
+      font-size: 16px; /* Reduce el tamaño del icono */
+    }
+  }
+
+  .btn-admin-cerrar .btn {
+    padding: 3px 6px; /* Reduce el padding */
+    border-radius: 15px; /* Bordes más pequeños */
+    font-size: 12px; /* Reduce el tamaño de la fuente */
+    margin-right: 4px; /* Reduce el margen derecho */
+  }
+}

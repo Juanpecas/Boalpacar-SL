@@ -1,5 +1,5 @@
 import React from "react";
-import PropTypes from "prop-types"; // Importa PropTypes
+import PropTypes from "prop-types"; 
 
 const ButtonReserva = ({ openModal, label }) => {
   return (
@@ -7,7 +7,7 @@ const ButtonReserva = ({ openModal, label }) => {
       <button
         className="button-openmodal1"
         onClick={openModal}
-        aria-label={label} // Mejora la accesibilidad
+        aria-label={label} 
       >
         {label}
       </button>
@@ -15,10 +15,10 @@ const ButtonReserva = ({ openModal, label }) => {
   );
 };
 
-// Define los tipos de las propiedades
+
 ButtonReserva.propTypes = {
-  openModal: PropTypes.func.isRequired, // La función openModal es obligatoria
-  label: PropTypes.string.isRequired, // El label es obligatorio
+  openModal: PropTypes.func.isRequired, 
+  label: PropTypes.string.isRequired, 
 };
 
 export default ButtonReserva;

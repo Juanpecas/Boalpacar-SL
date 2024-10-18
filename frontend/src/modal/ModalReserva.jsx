@@ -55,7 +55,7 @@ const ModalReserva = ({ closeModal }) => {
     e.preventDefault();
     const errores = validarFormulario();
     if (Object.keys(errores).length === 0) {
-      // Solo si no hay errores
+     
       setHorasReservadas([...horasReservadas, form.hora]);
       navigate("/checkout", { state: { form, precio } });
       closeModal();
@@ -71,9 +71,9 @@ const ModalReserva = ({ closeModal }) => {
       [name]: value,
     }));
 
-    // Actualizar el precio basado en el tipo de lavado
+    
     if (name === "tipoLavado") {
-      setPrecio(precios[value] || 0); // Actualizar el precio en centavos
+      setPrecio(precios[value] || 0); 
     }
   };
 

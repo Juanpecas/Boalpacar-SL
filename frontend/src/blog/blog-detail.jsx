@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import axios from "axios";
-import DOMPurify from "dompurify"; // Importa DOMPurify
+import DOMPurify from "dompurify"; 
 import ReactHtmlParser from "react-html-parser";
 import PropTypes from "prop-types";
 
@@ -15,7 +15,7 @@ export default class BlogDetail extends Component {
       currentId: this.props.match.params.slug,
       blogItem: {},
       editMode: false,
-      errorMessage: "", // Añade estado para manejar errores
+      errorMessage: "", 
     };
   }
 
@@ -39,7 +39,7 @@ export default class BlogDetail extends Component {
       this.setState({
         errorMessage:
           "No se pudo cargar el artículo. Intenta nuevamente más tarde.",
-      }); // Muestra mensaje de error
+      }); 
     }
   }
 
@@ -72,18 +72,18 @@ export default class BlogDetail extends Component {
         />
       );
     } else {
-      const cleanContent = DOMPurify.sanitize(content); // Limpia el contenido
+      const cleanContent = DOMPurify.sanitize(content)
 
       return (
         <div className="content-container">
           <h1 onClick={this.handleEditClick}>{title}</h1>
           <BlogFeaturedImage img={featured_image_url} />
           <div className="content">{ReactHtmlParser(cleanContent)}</div>{" "}
-          {/* Usa el contenido limpio */}
+          
           {this.state.errorMessage && (
             <div className="error-text">{this.state.errorMessage}</div>
           )}{" "}
-          {/* Muestra mensaje de error */}
+          
         </div>
       );
     }

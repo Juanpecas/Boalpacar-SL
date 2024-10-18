@@ -73,3 +73,51 @@
   width: 20px;
   height: 20px;
 }
+
+@media (max-width: 768px) {
+  .btn-submit {
+    padding: 8px; /* Reduce el padding en pantallas medianas */
+    font-size: 0.9rem; /* Reduce el tamaño de la fuente */
+    margin-top: 8px; /* Reduce el margen superior */
+  }
+
+  .btn-switch {
+    margin-top: 10px; /* Reduce el margen superior */
+    font-size: 0.85rem; /* Reduce el tamaño de la fuente */
+  }
+
+  .btn-google-login {
+    padding: 8px 16px; /* Reduce el padding */
+    font-size: 0.9rem; /* Reduce el tamaño de la fuente */
+    width: 100%; /* Asegura que el botón ocupe el ancho completo */
+  }
+
+  .btn-google-login img {
+    width: 18px; /* Reduce el tamaño del ícono */
+    height: 18px;
+  }
+}
+
+@media (max-width: 480px) {
+  .btn-submit {
+    padding: 6px; /* Reduce más el padding en pantallas pequeñas */
+    font-size: 0.8rem; /* Reduce el tamaño de la fuente */
+    margin-top: 6px; /* Reduce el margen superior */
+  }
+
+  .btn-switch {
+    margin-top: 8px; /* Reduce el margen superior */
+    font-size: 0.75rem; /* Reduce aún más el tamaño de la fuente */
+  }
+
+  .btn-google-login {
+    padding: 6px 12px; /* Reduce aún más el padding */
+    font-size: 0.8rem; /* Reduce el tamaño de la fuente */
+    width: 100%; /* Asegura que ocupe el ancho completo */
+  }
+
+  .btn-google-login img {
+    width: 16px; /* Reduce aún más el tamaño del ícono */
+    height: 16px;
+  }
+}

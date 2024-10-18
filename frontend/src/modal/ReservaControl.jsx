@@ -15,14 +15,14 @@ const ReservaControl = () => {
 
   return (
     <div>
-      {/* Botón para abrir el modal */}
+      
       <ButtonReserva
         openModal={openModal}
         label="Reservar"
-        aria-haspopup="true" // Mejora de accesibilidad
+        aria-haspopup="true" 
       />
 
-      {/* Renderizado condicional del modal */}
+      
       {isModalOpen && <ModalReserva closeModal={closeModal} />}
     </div>
   );

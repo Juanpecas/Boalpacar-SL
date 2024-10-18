@@ -3,21 +3,20 @@
   grid-template-columns: repeat(
     3,
     0.8fr
-  ); /* Ajusta para hacer las columnas más pequeñas */
-  gap: 15px; /* Espaciado entre elementos */
-  margin: 20px; /* Margen exterior */
+  ); 
+  gap: 15px; 
+  margin: 20px; 
 }
 
 .portfolio-item-wrapper {
   position: relative;
-  overflow: hidden; /* Para evitar que los elementos sobresalgan */
-  border-radius: 8px; /* Bordes redondeados */
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Sombra suave */
-  transition: transform 0.3s; /* Transición para el hover */
-  cursor: pointer; /* Cursor cambia al pasar por encima */
+  overflow: hidden; 
+  border-radius: 8px; 
+  transition: transform 0.3s; 
+  cursor: pointer; 
 
   &:hover {
-    transform: scale(1.02); /* Efecto de escalado al pasar el mouse */
+    transform: scale(1.02); 
   }
 }
 
@@ -26,13 +25,13 @@
   background-position: center;
   background-repeat: no-repeat;
   height: 0;
-  padding-bottom: 70%; /* Mantiene las imágenes cuadradas */
-  width: 100%; /* Mantén el ancho al 100% del contenedor */
+  padding-bottom: 70%; 
+  width: 100%; 
   transition: filter 0.3s;
 }
 
 .image-blur {
-  filter: brightness(70%); /* Oscurece la imagen al pasar el mouse */
+  filter: brightness(70%);
 }
 
 .img-text-wrapper {
@@ -43,41 +42,41 @@
   bottom: 0;
   display: flex;
   flex-direction: column;
-  justify-content: space-around; /* El título va arriba, el subtítulo abajo */
+  justify-content: space-around; 
   align-items: center;
-  padding: 10px; /* Ligero padding */
+  padding: 10px; 
   text-align: center;
 }
 
 .title {
-  color: rgb(248, 248, 248); /* Color del título */
-  font-size: 0.9rem; /* Tamaño más pequeño */
-  font-weight: 700; /* Peso del título */
-  background-color: rgba(0, 0, 0, 0.6); /* Fondo semi-transparente */
-  padding: 5px 10px; /* Añadir relleno alrededor del título */
-  border-radius: 5px; /* Bordes redondeados para el título */
-  width: 100%; /* Ocupa todo el ancho */
+  color: rgb(248, 248, 248); 
+  font-size: 0.9rem; 
+  font-weight: 700; 
+  background-color: rgba(0, 0, 0, 0.6); 
+  padding: 5px 10px;
+  border-radius: 5px; 
+  width: 100%; 
 }
 
 .subtitle {
-  color: white; /* Color del subtítulo */
-  font-size: 0.8rem; /* Tamaño más pequeño y legible */
-  font-weight: 600; /* Peso regular */
-  background-color: rgba(0, 0, 0, 0.6); /* Fondo semi-transparente */
-  padding: 10px; /* Espaciado interno alrededor del texto */
-  border-radius: 5px; /* Bordes redondeados */
-  width: 100%; /* Ocupa todo el ancho disponible */
-  text-align: left; /* Alineación del texto a la izquierda */
-  line-height: 1.4; /* Mejor espacio entre líneas para legibilidad */
-  margin-top: 10px; /* Separación entre el subtítulo y otros elementos */
+  color: white; 
+  font-size: 0.8rem; 
+  font-weight: 600; 
+  background-color: rgba(0, 0, 0, 0.6); 
+  padding: 10px; 
+  border-radius: 5px; 
+  width: 100%; 
+  text-align: left; 
+  line-height: 1.4; 
+  margin-top: 10px; 
 }
 
-/* Estilos para el botón de reserva */
+
 .reserve-button-wrapper {
   position: absolute;
-  bottom: 5px; /* Ajusta la posición en la parte inferior */
-  right: 5px; /* Alineación a la derecha */
-  text-align: right; /* Alineación a la derecha */
+  bottom: 5px; 
+  right: 5px; 
+  text-align: right; 
 }
 
 .reserve-button {
@@ -122,4 +121,77 @@
   max-width: 100%; /* Limita el ancho máximo de la imagen */
   max-height: 100%; /* Limita la altura máxima de la imagen */
   object-fit: contain; /* Mantiene la relación de aspecto sin recortar */
+}
+
+@media (max-width: 768px) {
+  .portfolio-items-wrapper {
+    grid-template-columns: repeat(2, 1fr); /* Pasa a dos columnas en pantallas medianas */
+    gap: 10px; /* Reduce el espacio entre elementos */
+    margin: 15px; /* Reduce el margen exterior */
+  }
+
+  .portfolio-item-wrapper {
+    border-radius: 6px; 
+  }
+
+  .portfolio-img-background {
+    padding-bottom: 60%; 
+  }
+
+  .title {
+    font-size: 0.85rem; /* Reduce el tamaño del título */
+    padding: 4px 8px; /* Reduce el padding */
+    color: rgb(190, 183, 173) !important;
+  }
+
+  .subtitle {
+    font-size: 0.6rem !important; /* Reduce el tamaño del subtítulo */
+    padding: 8px; /* Reduce el padding */
+    margin-top: 8px; /* Reduce la separación superior */
+  }
+
+  .reserve-button {
+    padding: 5px 10px; /* Reduce el tamaño del botón */
+  }
+
+  .logo-wrapper {
+    width: 60px; /* Reduce el tamaño del logo */
+    height: 60px;
+  }
+}
+
+@media (max-width: 480px) {
+  .portfolio-items-wrapper {
+    grid-template-columns: 1fr; 
+    gap: 8px; 
+    margin: 10px; 
+  }
+
+  .portfolio-item-wrapper {
+    border-radius: 5px; 
+  }
+
+  .portfolio-img-background {
+    padding-bottom: 50%; 
+  }
+
+  .title {
+    font-size: 0.8rem; 
+    padding: 3px 6px; 
+  }
+
+  .subtitle {
+    font-size: 0.7rem; 
+    padding: 6px; 
+    margin-top: 6px; 
+  }
+
+  .reserve-button {
+    padding: 4px 8px; 
+  }
+
+  .logo-wrapper {
+    width: 50px; 
+    height: 50px;
+  }
 }

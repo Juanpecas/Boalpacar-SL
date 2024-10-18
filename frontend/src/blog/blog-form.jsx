@@ -57,7 +57,7 @@ const BlogForm = (props) => {
       });
 
       if (featured_image) {
-        setFeaturedImage(null); // Restablecer el estado de la imagen
+        setFeaturedImage(null); 
       }
 
       setTitle("");
@@ -136,7 +136,7 @@ const BlogForm = (props) => {
           </div>
         )}
 
-        {/* Mostrar la imagen cargada */}
+        
         {featured_image && (
           <div className="portfolio-manager-image-wrapper">
             <img src={URL.createObjectURL(featured_image)} alt="Cargada" />

@@ -14,9 +14,9 @@ const LoginModal = ({ show, handleClose, onLogin }) => {
 
     if (isRegister) {
       console.log("Registro con:", { email, password });
-      // Aquí puedes manejar la lógica de registro si es necesario
+      
     } else {
-      // Inicio de sesión con email y password
+     
       await onLogin(email, password);
       handleClose();
     }
@@ -27,7 +27,7 @@ const LoginModal = ({ show, handleClose, onLogin }) => {
       const result = await signInWithPopup(auth, provider);
       const user = result.user;
       console.log("Usuario logueado con Google:", user);
-      handleClose(); // Cierra el modal si el inicio de sesión es exitoso
+      handleClose(); 
     } catch (error) {
       console.error("Error al iniciar sesión con Google:", error);
       setErrorText("Error al iniciar sesión con Google. Intenta nuevamente.");
@@ -80,7 +80,7 @@ const LoginModal = ({ show, handleClose, onLogin }) => {
           </Button>
         </Form>
 
-        {/* Botón para iniciar sesión con Google */}
+       
         <Button
           variant="outline-danger"
           className="btn-google-login"

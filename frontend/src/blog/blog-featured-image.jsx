@@ -1,32 +1,32 @@
 import React from "react";
-import PropTypes from "prop-types"; // Importa PropTypes
+import PropTypes from "prop-types"; 
 
 const BlogFeaturedImage = (props) => {
   if (!props.img) {
-    return null; // Si no hay imagen, no se renderiza nada
+    return null; 
   }
 
   return (
     <div className="featured-image-wrapper">
       <img
         src={props.img}
-        alt="Imagen destacada del blog" // Añade un atributo alt
+        alt="Imagen destacada del blog" 
         style={{
-          width: "100%", // Ajusta el tamaño de la imagen
-          height: "auto", // Mantiene la proporción
+          width: "100%", 
+          height: "auto", 
         }}
         onError={(e) => {
-          e.target.onerror = null; // Evita bucles infinitos
-          e.target.src = "path/to/default/image.jpg"; // Ruta a una imagen predeterminada
+          e.target.onerror = null; 
+          e.target.src = "path/to/default/image.jpg"; 
         }}
       />
     </div>
   );
 };
 
-// Definir tipos de props
+
 BlogFeaturedImage.propTypes = {
-  img: PropTypes.string.isRequired, // La prop img debe ser una cadena
+  img: PropTypes.string.isRequired, 
 };
 
 export default BlogFeaturedImage;

@@ -22,3 +22,21 @@
     transform: translateY(-2px); // Efecto de elevación al hacer hover
   }
 }
+
+@media (max-width: 768px) {
+  .button-openmodal1 {
+    padding: 5px 10px !important; 
+    font-size: 0.6rem !important; /* Reduce el tamaño de la fuente */
+    border-radius: 20px !important; /* Ajusta el borde redondeado */
+    margin-left: 0px !important; /* Reduce el margen izquierdo */
+  }
+}
+
+@media (max-width: 480px) {
+  .button-openmodal1 {
+    padding: 8px 16px; /* Reduce aún más el padding */
+    font-size: 0.8rem; /* Reduce más el tamaño de la fuente */
+    border-radius: 30px; /* Bordes más pequeños */
+    margin-left: 15px; /* Reduce aún más el margen izquierdo */
+  }
+}

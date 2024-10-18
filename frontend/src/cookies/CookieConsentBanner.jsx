@@ -1,29 +1,29 @@
 import React, { useEffect, useState } from "react";
-import { setCookie, getCookie } from "./CookieManager"; // Ajusta la ruta según tu estructura de carpetas
+import { setCookie, getCookie } from "./CookieManager"; 
 
 const CookieConsentBanner = () => {
   const [showBanner, setShowBanner] = useState(false);
 
   useEffect(() => {
-    const cookiesAccepted = getCookie("cookiesAccepted"); // Verifica si el usuario ya ha aceptado cookies
+    const cookiesAccepted = getCookie("cookiesAccepted"); 
     if (!cookiesAccepted) {
-      setShowBanner(true); // Muestra el banner si no hay consentimiento
+      setShowBanner(true); 
     }
   }, []);
 
-  // Función para aceptar cookies
+  
   const acceptCookies = () => {
-    setCookie("cookiesAccepted", "true", { expires: 365 }); // Establece la cookie con consentimiento
-    setShowBanner(false); // Oculta el banner
+    setCookie("cookiesAccepted", "true", { expires: 365 }); 
+    setShowBanner(false); 
   };
 
-  // Función para rechazar cookies
+ 
   const rejectCookies = () => {
-    setCookie("cookiesAccepted", "false", { expires: 365 }); // Establece la cookie con rechazo
-    setShowBanner(false); // Oculta el banner
+    setCookie("cookiesAccepted", "false", { expires: 365 }); 
+    setShowBanner(false); 
   };
 
-  // Si no hay banner que mostrar, retorna null
+  
   if (!showBanner) {
     return null;
   }

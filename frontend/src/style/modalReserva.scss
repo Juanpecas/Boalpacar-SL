@@ -137,22 +137,33 @@ select {
 
 /* Media Queries para ajustar el tamaño en pantallas pequeñas */
 @media (max-width: 768px) {
+  .modal-overlay {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 10px; /* Ajusta el padding general del modal */
+  }
+
   .modal-overlay .modals {
-    padding: 1px !important; /* Reduce el padding del modal */
-    max-width: 250px !important;
-    height: 150px;
-    margin: 0 !important;
+    width: 85%; /* Ocupa el 85% del ancho de la pantalla */
+    max-width: 300px; /* Un ancho máximo más pequeño */
+    max-height: 300px; /* Limita la altura máxima del modal */
+    overflow-y: auto; /* Añade scroll si el contenido excede el tamaño */
+    margin: 0 auto !important; /* Asegura que esté centrado horizontalmente */
+    padding: 10px !important; /* Ajusta el padding interno */
   }
 
   h6 {
-    font-size: 1.25rem !important; /* Reduce el tamaño de fuente del título */
-    margin-bottom: 1px !important; /* Reduce el margen inferior */
+    font-size: 1.25rem !important;
+    margin-bottom: 1px !important;
   }
+
   .form-group {
     margin: 0 !important;
   }
+
   .close-button {
-    font-size: 1.25rem; /* Reduce el tamaño del botón de cierre */
+    font-size: 1.25rem;
   }
 
   input[type="text"],
@@ -160,31 +171,41 @@ select {
   input[type="tel"],
   input[type="date"],
   select {
-    padding: 2px; /* Reduce el padding de los inputs */
-    font-size: 20px; /* Reduce el tamaño de la fuente de los inputs */
+    padding: 2px;
+    font-size: 18px; /* Reduce el tamaño de la fuente */
   }
 
   .button-submit,
   .button-cancel {
-    padding: 10px 20px; /* Reduce el tamaño del padding */
-    font-size: 0.9rem; /* Reduce el tamaño de la fuente de los botones */
+    padding: 8px 15px; /* Reduce el tamaño del padding de los botones */
+    font-size: 0.85rem; /* Reduce el tamaño de la fuente de los botones */
   }
 }
 
 @media (max-width: 480px) {
+  .modal-overlay {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 5px; /* Reduce el padding para pantallas más pequeñas */
+  }
+
   .modal-overlay .modals {
-    padding: 10px; /* Reduce aún más el padding */
-    width: 65% !important; /* Aumenta el ancho en pantallas más pequeñas */
-    max-width: 50px !important; /* Disminuye el ancho máximo */
+    width: 90%; /* Ocupa el 90% del ancho de la pantalla */
+    max-width: 280px; /* Reduce el ancho máximo */
+    max-height: 250px; /* Limita la altura máxima para pantallas pequeñas */
+    overflow-y: auto; /* Habilita el scroll vertical si es necesario */
+    margin: 0 auto !important;
+    padding: 8px !important; /* Reduce el padding interno */
   }
 
   h4 {
-    font-size: 1.1rem; /* Reduce más el tamaño de fuente del título */
-    margin-bottom: 10px; /* Reduce aún más el margen */
+    font-size: 1rem; /* Ajusta el tamaño de la fuente */
+    margin-bottom: 8px;
   }
 
   .close-button {
-    font-size: 1rem; /* Reduce aún más el tamaño del botón de cierre */
+    font-size: 0.9rem; /* Ajusta el tamaño del botón de cierre */
   }
 
   input[type="text"],
@@ -192,17 +213,17 @@ select {
   input[type="tel"],
   input[type="date"],
   select {
-    padding: 4px; /* Reduce aún más el padding de los inputs */
-    font-size: 0.8rem; /* Reduce el tamaño de la fuente de los inputs */
+    padding: 3px;
+    font-size: 0.75rem; /* Reduce aún más el tamaño de la fuente */
   }
 
   .button-submit,
   .button-cancel {
-    padding: 8px 16px; /* Reduce el tamaño del padding */
-    font-size: 0.8rem; /* Reduce el tamaño de la fuente de los botones */
+    padding: 6px 12px; /* Reduce el tamaño del padding de los botones */
+    font-size: 0.75rem; /* Reduce el tamaño de la fuente de los botones */
   }
 
   .additional-info {
-    font-size: 12px; /* Reduce el tamaño de la fuente de información adicional */
+    font-size: 10px; /* Reduce aún más el tamaño de la fuente de la info adicional */
   }
 }

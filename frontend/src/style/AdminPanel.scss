@@ -14,10 +14,12 @@
   justify-content: space-between;
   align-items: center;
   padding: 1rem 2rem;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
 }
 
 .admin-header h1 {
   margin: 0;
+  font-size: 1.5rem;
 }
 
 .admin-user-info {
@@ -37,6 +39,7 @@
   color: #fff;
   border-radius: 5px;
   cursor: pointer;
+  transition: background-color 0.3s ease;
 }
 
 .admin-user-info button:hover {
@@ -47,6 +50,7 @@
 .admin-content {
   display: flex;
   flex: 1;
+  transition: all 0.3s ease;
 }
 
 /* Sidebar de navegación */
@@ -55,6 +59,7 @@
   background-color: #34495e;
   color: #fff;
   padding: 1rem;
+  transition: width 0.3s ease;
 }
 
 .admin-sidebar nav ul {
@@ -72,14 +77,20 @@
   background-color: #2c3e50;
 }
 
+.admin-sidebar nav ul li.active {
+  background-color: #1abc9c;
+  border-radius: 5px;
+}
+
 /* Área principal del contenido */
 .admin-main-content {
   flex: 1;
   padding: 2rem;
   background-color: #f8f9fa;
+  transition: padding 0.3s ease;
 }
 
-/* El gestor del portafolio (ya existente) */
+/* El gestor del portafolio */
 .portfolio-manager-wrapper {
   display: flex;
   justify-content: space-between;
@@ -89,4 +100,91 @@
   background-color: #fff;
   border-radius: 10px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease;
+}
+
+/* Media Queries para pantallas medianas (tablets) */
+@media (max-width: 768px) {
+  .admin-header h1 {
+    font-size: 1.2rem;
+  }
+
+  .admin-content {
+    flex-direction: column;
+  }
+
+  .admin-sidebar {
+    width: 220px;
+    padding: 0.5rem;
+  }
+
+  .admin-main-content {
+    padding: 1.5rem;
+  }
+
+  .portfolio-manager-wrapper {
+    flex-direction: column;
+    padding: 1rem;
+    width: 100%;
+  }
+}
+
+/* Media Queries para pantallas pequeñas (móviles) */
+@media (max-width: 480px) {
+  .admin-header {
+    padding: 0.5rem 1rem;
+  }
+
+  .admin-header h1 {
+    font-size: 1rem;
+  }
+
+  .admin-user-info span {
+    margin-right: 0.5rem;
+  }
+
+  .admin-content {
+    flex-direction: column;
+  }
+
+  .admin-sidebar {
+    width: 200px;
+    padding: 0.5rem;
+  }
+
+  .admin-sidebar nav ul li {
+    padding: 0.8rem 0;
+  }
+
+  .admin-main-content {
+    padding: 1rem;
+  }
+
+  .portfolio-manager-wrapper {
+    padding: 0.5rem;
+    width: 100%;
+    box-shadow: none;
+  }
+
+  /* Efecto innovador: Minimizar el sidebar en móviles */
+  .admin-sidebar {
+    position: absolute;
+    left: -200px;
+    transition: left 0.3s ease;
+  }
+
+  .admin-sidebar.open {
+    left: 0;
+  }
+
+  .admin-sidebar-toggle {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    background-color: #2d3436;
+    color: #fff;
+    padding: 0.5rem;
+    cursor: pointer;
+    border-radius: 3px;
+  }
 }

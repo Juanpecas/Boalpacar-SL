@@ -5,7 +5,6 @@ import axios from "axios";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import NavigationContainer from "./navigation/navigation-container";
 import Inicio from "./pages/inicio";
-import SobreNosotros from "./pages/sobre-nosotros";
 import Ofertas from "./pages/ofertas";
 import Servicios from "./pages/servicios";
 import BlogDetail from "./pages/blog-detail";
@@ -21,6 +20,7 @@ import "bootstrap/dist/css/bootstrap.min.css";
 import { loadStripe } from "@stripe/stripe-js";
 import { Elements } from "@stripe/react-stripe-js";
 import Footer from "./footer/Footer";
+import Conocenos from "./pages/conócenos";
 
 const stripePromise = loadStripe(
   "pk_test_51QAGC6EJxV1jBn9lcFqz8F4GTgt50k9GGwjSmTIQh2QNVYsqbtgwtC4ul8tZN6IZOMV3Sys2bRPxlyMZRn6bN81l00vXkUwXeV"
@@ -122,7 +122,7 @@ export default class App extends Component {
             <Routes>
               <Route path="/" element={<Inicio />} />
               <Route path="/inicio" element={<Inicio />} />
-              <Route path="/sobre-nosotros" element={<SobreNosotros />} />
+              <Route path="/conocenos" element={<Conocenos />} />
               <Route path="/servicios" element={<Servicios />} />
               <Route path="/ofertas" element={<Ofertas />} />
               <Route path="*" element={<NoMatch />} />

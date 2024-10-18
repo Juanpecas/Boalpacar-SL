@@ -125,7 +125,7 @@ const AuthButton = ({ handleSuccessfulLogin, handleSuccessfulLogout }) => {
             style={{ marginRight: "4px", cursor: "pointer" }}
             onClick={() => setShowLoginModal(true)}
           >
-            Iniciar sesión / registrarse
+            Iniciar
           </span>
           <FontAwesomeIcon
             icon={faSignInAlt}

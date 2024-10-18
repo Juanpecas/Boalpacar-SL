@@ -1,3 +1,11 @@
+/* Contenedor envolvente */
+.filter-links-wrapper {
+  width: 100%; /* Abarca todo el ancho */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
 /* Estilos para el contenedor de los botones */
 .filter-links {
   display: flex;
@@ -19,12 +27,14 @@
   text-decoration: none; /* Sin subrayado */
   padding: 10px 20px; /* Espaciado interno */
   position: relative; /* Posicionamiento relativo para el efecto */
-  transition: color 0.3s ease; /* Transición suave para el color */
+  transition: color 0.3s ease, transform 0.3s ease, text-shadow 0.3s ease; /* Transición suave para color, transformación y sombra */
 }
 
 /* Efecto al pasar el mouse por encima del botón */
 .btn:hover {
-  color: black; /* Color del texto al pasar el mouse */
+  color: black; /* Cambia el color del texto */
+  transform: translateY(-3px); /* Sutil elevación del botón */
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2); /* Sombra en el texto */
 }
 
 /* Efecto de subrayado */
@@ -55,4 +65,39 @@
 .btn.selected::after {
   width: 100%; /* Ancho completo al seleccionar */
   background: black; /* Color de la línea al seleccionar */
+}
+
+/* Media Queries para ajustar el tamaño en pantallas medianas y pequeñas */
+
+/* Para pantallas medianas (tablets) */
+@media (max-width: 768px) {
+  .filter-links {
+    padding: 20px; /* Reduce el padding alrededor de los botones */
+    flex-direction: column; /* Cambia la dirección de los botones a columna */
+    align-items: center;
+  }
+
+  .btn {
+    height: 35px; /* Reduce la altura de los botones */
+    font-size: 0.85rem; /* Reduce el tamaño del texto */
+    margin-right: 0; /* Elimina el margen entre los botones */
+    margin-bottom: 15px; /* Añade espacio vertical entre botones */
+    padding: 8px 15px; /* Reduce el padding interno */
+  }
+}
+
+/* Para pantallas pequeñas (móviles) */
+@media (max-width: 480px) {
+  .filter-links {
+    padding: 15px; /* Reduce más el padding */
+    flex-direction: column; /* Sigue en columna */
+    align-items: center;
+  }
+
+  .btn {
+    height: 30px; /* Reduce aún más la altura */
+    font-size: 0.8rem; /* Reduce más el tamaño del texto */
+    margin-bottom: 10px; /* Ajusta el espaciado entre botones */
+    padding: 6px 10px; /* Reduce más el padding interno */
+  }
 }

@@ -17,24 +17,24 @@
   text-align: center;
 
   h5 {
-    font-size: 1.6rem; /* Tamaño de fuente más pequeño */
-    color: #2c3e50; /* Color oscuro */
+    font-size: 1.6rem; 
+    color: #2c3e50; 
     margin-bottom: 10px;
-    text-shadow: 1px 1px 5px rgba(0, 0, 0, 0.2); /* Sombra sutil en el texto */
+    text-shadow: 1px 1px 5px rgba(0, 0, 0, 0.2); 
   }
 
   h6 {
-    font-size: 1.2rem; /* Tamaño de fuente más pequeño */
-    color: #34495e; /* Color gris oscuro */
-    text-shadow: 1px 1px 5px rgba(0, 0, 0, 0.2); /* Sombra sutil en el texto */
+    font-size: 1.2rem; 
+    color: #34495e; 
+    text-shadow: 1px 1px 5px rgba(0, 0, 0, 0.2); 
   }
 }
 
 .wrapper-inf {
   display: flex;
-  justify-content: space-around; /* Asegura que los elementos tengan espacio uniforme */
-  align-items: flex-start; /* Alinea los elementos en la parte superior */
-  width: 100%; /* Asegura que ocupe todo el ancho */
+  justify-content: space-around; 
+  align-items: flex-start; 
+  width: 100%;
 }
 
 .cars-inf,
@@ -50,41 +50,41 @@
 .cars-inf div,
 .name-inf div,
 .price-inf div {
-  margin: 10px 0; /* Espaciado entre elementos */
-  font-size: 1.2rem; /* Tamaño de fuente general */
-  color: #000000; /* Color oscuro */
-  text-align: center; /* Centra el texto */
+  margin: 10px 0; 
+  font-size: 1.2rem; 
+  color: #000000; 
+  text-align: center; 
 }
 
-/* Estilos para los iconos de coches */
+
 .cars-inf .coche,
 .cars-inf .furgoneta,
 .cars-inf .camion,
 .cars-inf .tractocamion {
-  font-size: 30px; /* Tamaño de iconos reducido */
-  color: #010a14; /* Color azul suave para los iconos */
-  margin-bottom: 8px; /* Espaciado entre el icono y el texto */
+  font-size: 30px; 
+  color: #010a14; 
+  margin-bottom: 8px; 
 }
 
-/* Estilos para nombres de coches */
+
 .name-inf div {
   font-weight: 600; /* Negrita */
-  text-shadow: 1px 1px 5px rgba(0, 0, 0, 0.1); /* Sombra sutil en el texto */
+  text-shadow: 1px 1px 5px rgba(0, 0, 0, 0.1); 
   margin-top: 22px;
 }
 
-/* Estilos para precios */
+
 .price-inf div {
-  font-weight: bold; /* Negrita para los precios */
-  font-size: 1.1rem; /* Tamaño de fuente para precios */
-  color: #001107; /* Color verde para precios */
-  text-shadow: 1px 1px 5px rgba(0, 0, 0, 0.1); /* Sombra sutil en el texto */
+  font-weight: bold; 
+  font-size: 1.1rem;
+  color: #001107; 
+  text-shadow: 1px 1px 5px rgba(0, 0, 0, 0.1); 
   margin-top: 25px;
 }
 
 #map-container {
-  height: 200px; /* Altura del contenedor del mapa */
-  width: 100%; /* Ancho del contenedor del mapa */
+  height: 200px; 
+  width: 100%; 
 }
 
 .directions-link {
@@ -165,4 +165,74 @@
 .button-openmodal1:hover {
   background-color: darkblue;
   color: white;
+}
+
+@media (max-width: 768px) {
+
+  .wrapper-text {
+    
+
+    h5 {
+      font-size: 15px !important; /* Tamaño de fuente más pequeño */
+     
+    }
+
+    h6 {
+      font-size: 10px !important; /* Tamaño de fuente más pequeño */
+     
+    }
+  }
+
+  .cars-inf,
+  .name-inf,
+  .price-inf,
+  .icon-inf {
+    margin-top: 20px;
+  }
+
+  .cars-inf div,
+  .name-inf div,
+  .price-inf div {
+    margin: 5px 0; /* Espaciado entre elementos */
+    font-size: 15px;
+  }
+
+  /* Estilos para los iconos de coches */
+  .cars-inf .coche,
+  .cars-inf .furgoneta,
+  .cars-inf .camion,
+  .cars-inf .tractocamion {
+    font-size: 15px; /* Tamaño de iconos reducido */
+    color: #010a14; /* Color azul suave para los iconos */
+    margin-bottom: 8px; /* Espaciado entre el icono y el texto */
+  }
+
+  /* Estilos para nombres de coches */
+  .name-inf div
+  .price-inf {
+    font-weight: 300; 
+    margin-top: 4px;
+  }
+
+  #map-container {
+    height: 0px; 
+    width: 0%; 
+  }
+
+  .directions-link a {
+    padding: 5px 10px;
+
+    span {
+      font-size: 14px;
+      
+    }
+  }
+
+  /* Middle-two */
+  .wrapper-middle-two {
+    background: radial-gradient(ellipse, #414283, #ffffff);
+    padding: 3px 0px;
+    flex-direction: column;
+    height: 40px !important;
+  }
 }

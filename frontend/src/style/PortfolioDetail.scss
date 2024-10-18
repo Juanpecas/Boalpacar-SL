@@ -43,3 +43,39 @@
     }
   }
 }
+
+/* Media Queries */
+
+@media (max-width: 768px) {
+  .portfolio-detail-wrapper .banner {
+    height: 250px;
+  }
+
+  .portfolio-detail-wrapper .portfolio-detail-description-wrapper .description {
+    width: 90%;
+    font-size: 1.5em;
+
+    .portfolio-detail-wrapper .bottom-content-wrapper .site-link {
+      font-size: 1em;
+      padding: 10px;
+    }
+  }
+
+  @media (max-width: 480px) {
+    .portfolio-detail-wrapper .banner {
+      height: 200px;
+    }
+
+    .portfolio-detail-wrapper
+      .portfolio-detail-description-wrapper
+      .description {
+      width: 100%;
+      font-size: 1.2em;
+    }
+
+    .portfolio-detail-wrapper .bottom-content-wrapper .site-link {
+      font-size: 0.9em;
+      padding: 8px;
+    }
+  }
+}

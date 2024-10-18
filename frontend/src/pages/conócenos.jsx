@@ -1,8 +1,8 @@
 import React from "react";
 
-const SobreNosotros = () => {
+const Conocenos = () => {
   return (
-    <div className="sobre-nosotros">
+    <div className="conocenos">
       <h1>Sobre Nosotros</h1>
       <p>
         En Boalpacar SL, con más de 30 años de experiencia en el sector de la
@@ -53,4 +53,4 @@ const SobreNosotros = () => {
   );
 };
 
-export default SobreNosotros;
+export default Conocenos;

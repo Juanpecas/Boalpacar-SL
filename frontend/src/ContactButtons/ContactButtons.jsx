@@ -1,5 +1,5 @@
 import React from "react";
-import "@fortawesome/fontawesome-free/css/all.min.css"; // Importar Font Awesome
+import "@fortawesome/fontawesome-free/css/all.min.css"; 
 
 const ContactButtons = () => {
   return (

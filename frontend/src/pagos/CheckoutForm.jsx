@@ -101,7 +101,7 @@ const CheckoutForm = () => {
     event.preventDefault();
 
     if (!stripe || !elements || !clientSecret) {
-      return; // Aseguramos que clientSecret está listo antes de proceder
+      return; 
     }
 
     setError(null);
@@ -119,13 +119,11 @@ const CheckoutForm = () => {
   return (
     <form onSubmit={handleSubmit}>
       <h2>Información de Reserva</h2>
-      {/* Información de la empresa */}
       <h4>Detalles de la Empresa</h4>
       <p>Nombre: {companyInfo.name}</p>
       <p>Dirección: {companyInfo.address}</p>
       <p>Teléfono: {companyInfo.phone}</p>
       <p>Email: {companyInfo.email}</p>
-      {/* Información de la reserva */}
       <h4>Detalles de la Reserva</h4>
       <p>Nombre: {reservationData.nombre}</p>
       <p>Modelo: {reservationData.modelo}</p>
@@ -135,7 +133,6 @@ const CheckoutForm = () => {
       <p>Hora: {reservationData.hora}</p>
       <p>Tipo de Lavado: {reservationData.tipoLavado}</p>
       <p>Precio: €{(price / 100).toFixed(2)}</p>{" "}
-      {/* Mostrar el precio correctamente */}
       <div>
         <input
           type="checkbox"

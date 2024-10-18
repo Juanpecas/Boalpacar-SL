@@ -17,7 +17,7 @@ class NavigationComponent extends Component {
               <BannerLogo />
             </NavLink>
           </div>
-          {["/inicio", "/servicios", "/ofertas", "/sobre-nosotros"].map(
+          {["/inicio", "/servicios", "/ofertas", "/conocenos"].map(
             (path) => (
               <div className="nav-link-wrapper" key={path}>
                 <NavLink
